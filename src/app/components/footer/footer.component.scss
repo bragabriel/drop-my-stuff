@@ -1,0 +1,26 @@
+@use '../../../_variables' as *;
+
+.footer {
+    background-color: $gray-50;
+    border-top: 1px solid $border;
+    margin-top: auto;
+}
+
+.footer-content {
+    padding: $spacing-8 0;
+    text-align: center;
+
+    p {
+        font-size: $text-sm;
+        color: $text-muted;
+        margin-bottom: $spacing-2;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .footer-tagline {
+        font-style: italic;
+    }
+}
