@@ -1,59 +1,73 @@
-# DropMyStuff
+# 🛍️ DropMyStuff
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+A modern, responsive e-commerce website built with Angular 20 for selling personal items online.
 
-## Development server
+## 📖 About
 
-To start a local development server, run:
+**DropMyStuff** is a clean and intuitive platform I created to showcase personal items for sale. It features a beautiful product grid with interactive cards, image carousels, and a smooth user experience across all devices.
 
-```bash
-ng serve
-```
+## ✨ Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 🎨 **Responsive Design** - Adapts seamlessly from mobile to desktop
+- 🖼️ **Image Carousel** - Navigate through multiple product photos with smooth transitions
+- 📜 **Scrollable Descriptions** - Fixed-height cards with custom scrollbars
+- 🏷️ **Product Metadata** - Category tags and condition badges
+- 💳 **Payment Info Modal** - Fixed popup with payment methods
+- ⚡ **Modern Stack** - Built with Angular 20 and SCSS
 
-## Code scaffolding
+## 🚀 Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+- Node.js (v18 or higher)
+- npm or yarn
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Installation
 
 ```bash
-ng build
+# Clone the repository
+git clone https://github.com/bragabriel/drop-my-stuff.git
+
+# Navigate to project directory
+cd drop-my-stuff
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The application will be available at `http://localhost:4200/`
 
-## Running unit tests
+## 🏗️ Built With
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Angular 20** - Frontend framework
+- **SCSS** - Styling with design system
+- **TypeScript** - Type-safe development
+- **Standalone Components** - Modern Angular architecture
 
-```bash
-ng test
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Route pages
+│   ├── models/         # TypeScript interfaces
+│   └── services/       # Business logic
+├── _variables.scss     # Design tokens
+└── styles.scss         # Global styles
 ```
 
-## Running end-to-end tests
+## 📄 License
 
-For end-to-end (e2e) testing, run:
+This project is licensed under the **MIT License** - feel free to use it, modify it, and make it your own! Just give credit where it's due. 😊
 
-```bash
-ng e2e
-```
+## 👨‍💻 Author
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Created by Gabriel Braga — [LinkedIn](https://www.linkedin.com/in/gabriel-braga-da-silva/) | [Twitter](https://x.com/gbraga_dev) | [YouTube](https://www.youtube.com/@gabrielbragadev)
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+⭐ If you found this helpful, consider giving it a star!
