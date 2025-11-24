@@ -76,16 +76,22 @@
 
 // Responsive styles
 @media (max-width: $breakpoint-mobile) {
+    .header-content {
+        padding: 0 $spacing-3; // Reduz padding lateral no mobile
+    }
+
     .nav {
-        gap: $spacing-4;
+        gap: $spacing-2; // Reduz gap entre links (de 32px para 8px)
+        align-items: center; // Centraliza verticalmente
 
         a {
             font-size: $text-sm;
-            padding: $spacing-2;
+            padding: $spacing-1 $spacing-2; // Reduz padding (de 8px 12px para 4px 8px)
+            white-space: nowrap; // Evita quebra de linha
         }
     }
 
     .logo a {
-        font-size: $text-xl;
+        font-size: $text-lg; // Reduz logo (de 24px para 18px)
     }
 }
