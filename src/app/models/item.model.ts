@@ -8,4 +8,5 @@ export interface Item {
     images: string[];
     category: string;
     condition: ItemCondition;
+    sold?: boolean;
 }

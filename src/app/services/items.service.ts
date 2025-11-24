@@ -29,7 +29,8 @@ export class ItemsService {
             images: [
                 '/assets/images/items/macbook-1.jpg',
                 '/assets/images/items/placeholder.svg'
-            ]
+            ],
+            sold: true
         },
         {
             id: 3,
