@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     <footer class="footer">
       <div class="container footer-content">
         <p>&copy; {{ currentYear }} DropMyStuff. Todos os direitos reservados.</p>
-        <p class="footer-tagline">Usados em boas condições / Aproveite!</p>
+        <p class="footer-tagline">Itens usados / Em boas condições / Aproveite!</p>
       </div>
     </footer>
   `,

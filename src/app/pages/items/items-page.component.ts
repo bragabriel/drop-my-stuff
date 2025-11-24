@@ -12,7 +12,7 @@ import { CardComponent } from '../../components/card/card.component';
       <div class="container">
         <div class="page-header">
           <h1>Itens Disponíveis</h1>
-          <p>Navegue por nossa seleção de itens à venda</p>
+          <p>Navegue pela seleção de itens à venda</p>
         </div>
         <div class="items-grid">
           @for (item of items; track item.id) {

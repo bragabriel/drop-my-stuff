@@ -4,9 +4,12 @@
     min-height: 100%;
     padding: $spacing-12 $spacing-6;
     background-color: $surface;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .container {
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
         text-align: center;
         animation: fadeIn 0.8s ease-out;
@@ -14,92 +17,181 @@
 
     h1 {
         margin-bottom: $spacing-4;
+        font-size: $text-4xl;
     }
 
     .intro {
         font-size: $text-lg;
         color: $text-secondary;
-        margin-bottom: $spacing-12;
+        margin-bottom: $spacing-10;
     }
 }
 
-.contact-methods {
+// Primary contacts - WhatsApp & Instagram
+.primary-contacts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: $spacing-8;
-    margin-bottom: $spacing-12;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+    justify-content: center;
+    gap: $spacing-6;
+    margin-bottom: $spacing-10;
 }
 
-.contact-item {
-    background-color: $white;
-    padding: $spacing-8;
-    border-radius: $radius-lg;
-    box-shadow: $shadow-md;
+.primary-card {
+    background: $white;
+    padding: $spacing-4;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-lg;
     transition: all $transition-normal;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-6;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: currentColor;
+        transform: scaleX(0);
+        transition: transform $transition-normal;
+    }
 
     &:hover {
         transform: translateY(-4px);
         box-shadow: $shadow-xl;
+        border-color: currentColor;
+
+        &::before {
+            transform: scaleX(1);
+        }
+
+        .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
     }
 
     .icon {
-        font-size: $text-5xl;
-        margin-bottom: $spacing-4;
+        font-size: 3.5rem;
+        transition: transform $transition-normal;
+        color: inherit;
+        flex-shrink: 0;
+    }
+
+    .content {
+        text-align: left;
+        flex: 1;
     }
 
     h3 {
-        font-size: $text-xl;
-        margin-bottom: $spacing-3;
+        font-size: $text-2xl;
+        margin-bottom: $spacing-1;
         color: $text-primary;
+        font-weight: $font-bold;
     }
 
-    a {
+    p {
         font-size: $text-base;
-        color: $primary-blue;
-        text-decoration: none;
-        font-weight: $font-medium;
-        transition: color $transition-fast;
+        color: $text-secondary;
+        margin: 0;
+    }
+
+    // Color themes
+    &.whatsapp {
+        color: #25D366;
 
         &:hover {
-            color: $primary-blue-hover;
-            text-decoration: underline;
+            background: linear-gradient(135deg, $white 0%, rgba(#25D366, 0.05) 100%);
+        }
+    }
+
+    &.instagram {
+        color: #E4405F;
+
+        &:hover {
+            background: linear-gradient(135deg, $white 0%, rgba(#E4405F, 0.05) 100%);
         }
     }
 }
 
-.social-links {
-    background-color: $white;
-    padding: $spacing-8;
-    border-radius: $radius-lg;
-    box-shadow: $shadow-md;
+// Divider
+.divider {
+    position: relative;
+    margin: $spacing-12 0 $spacing-8 0;
+    text-align: center;
 
-    h3 {
-        font-size: $text-xl;
-        margin-bottom: $spacing-6;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($text-secondary, 0.2), transparent);
+    }
+
+    .divider-text {
+        position: relative;
+        display: inline-block;
+        padding: 0 $spacing-6;
+        background: $surface;
+        color: $text-secondary;
+        font-size: $text-sm;
+        font-weight: $font-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+}
+
+// Secondary contacts
+.secondary-contacts {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-4;
+    flex-wrap: wrap;
+}
+
+.secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-3 $spacing-5;
+    background: $white;
+    border: 1px solid rgba($text-secondary, 0.2);
+    border-radius: $radius-full;
+    text-decoration: none;
+    color: $text-secondary;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    transition: all $transition-fast;
+    box-shadow: $shadow-sm;
+
+    .material-icons {
+        font-size: 1.25rem;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+        border-color: currentColor;
         color: $text-primary;
     }
 
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: $spacing-6;
-        flex-wrap: wrap;
+    // Specific colors on hover
+    &.linkedin:hover {
+        color: #0A66C2;
+        background: rgba(#0A66C2, 0.05);
     }
 
-    .social-link {
-        display: inline-block;
-        padding: $spacing-3 $spacing-6;
-        background-color: $primary-blue;
-        color: $white;
-        border-radius: $radius-md;
-        text-decoration: none;
-        font-weight: $font-semibold;
-        transition: all $transition-fast;
-
-        &:hover {
-            background-color: $primary-blue-hover;
-            transform: scale(1.05);
-        }
+    &.twitter:hover {
+        color: #1DA1F2;
+        background: rgba(#1DA1F2, 0.05);
     }
 }
 
@@ -115,8 +207,30 @@
     }
 }
 
+// Responsive
 @media (max-width: $breakpoint-tablet) {
-    .contact-methods {
+    .primary-contacts {
         grid-template-columns: 1fr;
+    }
+
+    .primary-card {
+        .icon {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: $text-xl;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .secondary-contacts {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secondary-link {
+        justify-content: center;
     }
 }
