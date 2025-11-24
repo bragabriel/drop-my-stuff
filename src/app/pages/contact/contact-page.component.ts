@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-contact-page',
-    imports: [],
-    template: `
+  selector: 'app-contact-page',
+  imports: [],
+  template: `
     <div class="contact-page">
       <div class="container">
         <div class="contact-content">
@@ -42,6 +42,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-    styleUrl: './contact-page.component.scss'
+  styleUrl: './contact-page.component.scss'
 })
 export class ContactPageComponent { }

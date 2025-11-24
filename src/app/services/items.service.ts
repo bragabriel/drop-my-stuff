@@ -9,9 +9,9 @@ export class ItemsService {
         {
             id: 1,
             title: 'Vintage Leather Jacket',
-            description: 'Classic brown leather jacket from the 90s. High-quality leather with minimal wear. Perfect for casual or semi-formal occasions. Features include inner pockets, metal zipper, and adjustable cuffs.',
+            description: 'Jaqueta clássica de couro marrom dos anos 90. Couro de alta qualidade com desgaste mínimo. Perfeita para ocasiões casuais ou semi-formais. Inclui bolsos internos, zíper de metal e punhos ajustáveis.',
             price: 150,
-            category: 'Clothing',
+            category: 'Vestuário',
             condition: 'good',
             images: [
                 '/assets/images/items/jacket-1.jpg',
@@ -22,9 +22,9 @@ export class ItemsService {
         {
             id: 2,
             title: 'Apple MacBook Pro 2019',
-            description: 'MacBook Pro 13-inch, 2019 model. Intel Core i5, 8GB RAM, 256GB SSD. Battery cycle count under 200. Comes with original charger and box. Minor cosmetic scratches on the bottom case, screen is pristine.',
+            description: 'MacBook Pro 13 polegadas, modelo 2019. Intel Core i5, 8GB RAM, 256GB SSD. Contagem de ciclos da bateria abaixo de 200. Acompanha carregador original e caixa. Pequenos arranhões cosméticos na parte inferior, tela impecável.',
             price: 800,
-            category: 'Electronics',
+            category: 'Eletrônicos',
             condition: 'excellent',
             images: [
                 '/assets/images/items/macbook-1.jpg',
@@ -34,9 +34,9 @@ export class ItemsService {
         {
             id: 3,
             title: 'Wooden Coffee Table',
-            description: 'Solid oak coffee table with a rustic finish. Dimensions: 120cm x 60cm x 45cm. Has some visible scratches and minor water stains on the surface, but structurally sound and sturdy.',
+            description: 'Mesa de centro de carvalho maciço com acabamento rústico. Dimensões: 120cm x 60cm x 45cm. Possui alguns arranhões visíveis e pequenas manchas de água na superfície, mas estruturalmente sólida e resistente.',
             price: 75,
-            category: 'Furniture',
+            category: 'Móveis',
             condition: 'fair',
             images: [
                 '/assets/images/items/table-1.jpg',
@@ -48,9 +48,9 @@ export class ItemsService {
         {
             id: 4,
             title: 'Nike Air Max Sneakers',
-            description: 'Nike Air Max 270 in black and white colorway. Size US 10. Worn a few times, practically brand new. Original box included. No signs of wear on the sole or upper.',
+            description: 'Nike Air Max 270 nas cores preto e branco. Tamanho US 10. Usado poucas vezes, praticamente novo. Caixa original incluída. Sem sinais de desgaste no solado ou parte superior.',
             price: 90,
-            category: 'Footwear',
+            category: 'Calçados',
             condition: 'excellent',
             images: [
                 '/assets/images/items/sneakers-1.jpg',
@@ -60,9 +60,9 @@ export class ItemsService {
         {
             id: 5,
             title: 'Acoustic Guitar - Yamaha F310',
-            description: 'Beginner-friendly acoustic guitar. Well-maintained, plays beautifully. Includes soft case and extra strings. Some finish wear on the back from regular use.',
+            description: 'Violão acústico ideal para iniciantes. Bem conservado, som excelente. Inclui capa macia e cordas extras. Algum desgaste no acabamento da parte traseira devido ao uso regular.',
             price: 120,
-            category: 'Music',
+            category: 'Música',
             condition: 'good',
             images: [
                 '/assets/images/items/guitar-1.jpg',
@@ -73,9 +73,9 @@ export class ItemsService {
         {
             id: 6,
             title: 'Standing Desk Lamp',
-            description: 'Modern LED desk lamp with adjustable brightness and color temperature. Touch control panel. USB charging port included. Has been used daily for about 2 years, minor scuffs on the base.',
+            description: 'Luminária LED moderna com brilho e temperatura de cor ajustáveis. Painel de controle touch. Porta USB para carregamento incluída. Usada diariamente por cerca de 2 anos, pequenos arranhões na base.',
             price: 35,
-            category: 'Home & Office',
+            category: 'Casa & Escritório',
             condition: 'good',
             images: [
                 '/assets/images/items/lamp-1.jpg',
@@ -85,9 +85,9 @@ export class ItemsService {
         {
             id: 7,
             title: 'Vintage Polaroid Camera',
-            description: 'Polaroid OneStep+ instant camera. Tested and working perfectly. Captures amazing vintage-style photos. Does not include film packs. Some cosmetic wear on the exterior casing.',
+            description: 'Câmera instantânea Polaroid OneStep+. Testada e funcionando perfeitamente. Captura fotos incríveis no estilo vintage. Não inclui pacotes de filme. Algum desgaste cosmético na carcaça externa.',
             price: 110,
-            category: 'Electronics',
+            category: 'Eletrônicos',
             condition: 'fair',
             images: [
                 '/assets/images/items/camera-1.jpg',
@@ -98,9 +98,9 @@ export class ItemsService {
         {
             id: 8,
             title: 'Designer Handbag',
-            description: 'Elegant black leather handbag from a premium brand. Spacious interior with multiple compartments. Gold-tone hardware. Shows minimal signs of use, handles in excellent condition.',
+            description: 'Elegante bolsa de couro preta de marca premium. Interior espaçoso com múltiplos compartimentos. Ferragens em tom dourado. Mostra sinais mínimos de uso, alças em excelente estado.',
             price: 200,
-            category: 'Accessories',
+            category: 'Acessórios',
             condition: 'excellent',
             images: [
                 '/assets/images/items/placeholder.svg',
@@ -110,9 +110,9 @@ export class ItemsService {
         {
             id: 9,
             title: 'Gaming Mouse - Logitech G502',
-            description: 'Popular gaming mouse with customizable weights and RGB lighting. All buttons fully functional. Cable shows some fraying near the connector but still works perfectly.',
+            description: 'Mouse gamer popular com pesos personalizáveis e iluminação RGB. Todos os botões totalmente funcionais. Cabo mostra algum desgaste perto do conector, mas ainda funciona perfeitamente.',
             price: 40,
-            category: 'Electronics',
+            category: 'Eletrônicos',
             condition: 'worn',
             images: [
                 '/assets/images/items/placeholder.svg'
@@ -121,9 +121,9 @@ export class ItemsService {
         {
             id: 10,
             title: 'Ceramic Plant Pot Set',
-            description: 'Set of 3 handmade ceramic plant pots in different sizes. Beautiful glazed finish in muted earth tones. Perfect for succulents or small plants. Brand new, never used.',
+            description: 'Conjunto de 3 vasos de cerâmica artesanais em diferentes tamanhos. Belo acabamento esmaltado em tons terrosos suaves. Perfeito para suculentas ou plantas pequenas. Novos, nunca usados.',
             price: 45,
-            category: 'Home & Office',
+            category: 'Casa & Escritório',
             condition: 'excellent',
             images: [
                 '/assets/images/items/placeholder.svg',
@@ -134,9 +134,9 @@ export class ItemsService {
         {
             id: 11,
             title: 'Vintage Vinyl Records Collection',
-            description: 'Collection of 15 classic rock vinyl records from the 70s and 80s. Includes albums from Pink Floyd, Led Zeppelin, and The Beatles. Most in good playing condition, some surface scratches.',
+            description: 'Coleção de 15 discos de vinil de rock clássico dos anos 70 e 80. Inclui álbuns de Pink Floyd, Led Zeppelin e The Beatles. Maioria em boas condições de reprodução, alguns arranhões superficiais.',
             price: 180,
-            category: 'Music',
+            category: 'Música',
             condition: 'good',
             images: [
                 '/assets/images/items/placeholder.svg',
@@ -146,9 +146,9 @@ export class ItemsService {
         {
             id: 12,
             title: 'Office Chair - Ergonomic',
-            description: 'Comfortable mesh office chair with lumbar support and adjustable armrests. Height adjustable. Used for about a year, shows minor wear on the seat cushion but still very comfortable.',
+            description: 'Cadeira de escritório confortável em mesh com suporte lombar e apoios de braço ajustáveis. Altura regulável. Usada por cerca de um ano, mostra desgaste leve no assento mas ainda muito confortável.',
             price: 95,
-            category: 'Furniture',
+            category: 'Móveis',
             condition: 'good',
             images: [
                 '/assets/images/items/placeholder.svg',
@@ -167,20 +167,20 @@ export class ItemsService {
 
     getConditionLabel(condition: ItemCondition): string {
         const labels: Record<ItemCondition, string> = {
-            'excellent': 'Excellent',
-            'good': 'Good',
-            'fair': 'Fair',
-            'worn': 'Worn'
+            'excellent': 'Excelente',
+            'good': 'Bom',
+            'fair': 'Regular',
+            'worn': 'Desgastado'
         };
         return labels[condition];
     }
 
     getConditionDescription(condition: ItemCondition): string {
         const descriptions: Record<ItemCondition, string> = {
-            'excellent': 'Like new, minimal signs of use',
-            'good': 'Used but well maintained',
-            'fair': 'Shows wear but fully functional',
-            'worn': 'Significant wear but still usable'
+            'excellent': 'Como novo, sinais mínimos de uso',
+            'good': 'Usado mas bem conservado',
+            'fair': 'Mostra desgaste mas totalmente funcional',
+            'worn': 'Desgaste significativo mas ainda utilizável'
         };
         return descriptions[condition];
     }
