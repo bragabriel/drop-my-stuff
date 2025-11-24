@@ -5,9 +5,10 @@ import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-items-page',
+  standalone: true,
   imports: [CardComponent],
   template: `
-    <div class="items-page">
+    <section class="items-page">
       <div class="container">
         <div class="page-header">
           <h1>Itens Disponíveis</h1>
@@ -19,7 +20,7 @@ import { CardComponent } from '../../components/card/card.component';
           }
         </div>
       </div>
-    </div>
+    </section>
   `,
   styleUrl: './items-page.component.scss'
 })

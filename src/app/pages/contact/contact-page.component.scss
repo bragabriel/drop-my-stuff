@@ -1,16 +1,16 @@
 @use '../../../_variables' as *;
 
 .contact-page {
-    min-height: calc(100vh - $header-height - 150px);
-    padding: $spacing-12 0;
+    min-height: 100%;
+    padding: $spacing-12 $spacing-6;
     background-color: $surface;
-}
 
-.contact-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        animation: fadeIn 0.8s ease-out;
+    }
 
     h1 {
         margin-bottom: $spacing-4;

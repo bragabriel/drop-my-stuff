@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  standalone: true,
   template: `
-    <div class="home-page">
+    <section class="home-page">
       <div class="hero-content">
         <h1>Bem-vindo ao DropMyStuff</h1>
         <p class="subtitle">
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
           Ver Itens Disponíveis
         </button>
       </div>
-    </div>
+    </section>
   `,
   styleUrl: './home-page.component.scss'
 })
