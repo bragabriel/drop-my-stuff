@@ -102,11 +102,14 @@
     }
 }
 
-// Animação de brilho para mobile
+// Animation and shine effect for mobile
 @keyframes shine {
-    0%, 100% {
+
+    0%,
+    100% {
         left: -100%;
     }
+
     50% {
         left: 100%;
     }
@@ -117,7 +120,7 @@
         h1 {
             font-size: $text-3xl;
 
-            // Animação contínua no mobile (já que não tem hover)
+            // Continuous animation on mobile (since it doesn't have hover)
             &::before {
                 animation: shine 3s ease-in-out infinite;
             }
