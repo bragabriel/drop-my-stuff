@@ -201,7 +201,6 @@
     max-height: 120px;
     padding-right: $spacing-2;
 
-    // Custom scrollbar
     &::-webkit-scrollbar {
         width: 4px;
     }
@@ -228,7 +227,6 @@
     }
 }
 
-// Price (Fixed at bottom)
 .card-price {
     border-top: 1px solid $border;
     padding-top: $spacing-3;
@@ -249,5 +247,14 @@
 
     .card-price .price {
         font-size: $text-xl;
+    }
+
+    // Always shows navigation buttons on mobile
+    .carousel-btn {
+        opacity: 0.8;
+
+        &:active {
+            opacity: 1;
+        }
     }
 }
