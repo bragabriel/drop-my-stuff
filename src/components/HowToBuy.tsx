@@ -10,13 +10,7 @@ function HowToBuy() {
         Como comprar
       </h2>
 
-      <ul className="how-to-buy__methods">
-        {PAYMENT_METHODS.map((method) => (
-          <li key={method} className="how-to-buy__method">
-            {method}
-          </li>
-        ))}
-      </ul>
+      <p className="how-to-buy__methods">{PAYMENT_METHODS.join(' · ')}</p>
 
       <p className="how-to-buy__note">
         Os itens são pessoais e usados. A conversa sobre cada um acontece no Instagram ou no WhatsApp — a gente

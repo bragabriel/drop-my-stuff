@@ -4,57 +4,45 @@
   gap: var(--space-sm);
 }
 
+/* Quebra em linhas em vez de rolar: sao so cinco categorias curtas, e
+   rolagem horizontal escondia tres delas no celular. */
 .filter-bar__chips {
   display: flex;
-  gap: var(--space-2xs);
-  overflow-x: auto;
-  scrollbar-width: none;
-  scroll-snap-type: x proximity;
-  padding-bottom: var(--space-3xs);
-}
-
-.filter-bar__chips::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  gap: var(--space-3xs) var(--space-2xs);
 }
 
 .filter-bar__chip {
   flex: 0 0 auto;
-  scroll-snap-align: start;
   display: inline-flex;
   align-items: center;
   gap: var(--space-3xs);
   min-height: 44px;
   padding: var(--space-2xs) var(--space-sm);
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
   background-color: transparent;
-  border: var(--border-width) solid var(--ink);
+  border: var(--border-width) solid transparent;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .filter-bar__chip[aria-pressed='true'] {
-  background-color: var(--riso-blue);
-  border-color: var(--riso-blue);
-  color: var(--paper);
+  color: var(--text);
+  font-weight: 500;
+  background-color: var(--surface);
+  border-color: var(--border);
 }
 
 .filter-bar__chip:hover {
-  border-color: var(--riso-blue);
+  color: var(--text);
 }
 
-.filter-bar__chip:focus-visible {
-  outline: var(--border-width) solid var(--riso-blue);
-  outline-offset: 2px;
-}
-
+/* Sem opacity: ela rebaixava o cinza abaixo do contraste minimo de AA. */
 .filter-bar__count {
-  opacity: 0.75;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
 }
 
 .filter-bar__toggle {
@@ -63,11 +51,8 @@
   align-items: center;
   min-height: 44px;
   padding: var(--space-2xs) 0;
-  font-family: var(--font-mono);
   font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
+  color: var(--text-muted);
   background: none;
   border: none;
   cursor: pointer;
@@ -76,21 +61,10 @@
 }
 
 .filter-bar__toggle[aria-pressed='true'] {
-  color: var(--riso-pink-ink);
+  color: var(--text);
 }
 
 .filter-bar__toggle:hover {
-  color: var(--riso-blue);
+  color: var(--text);
 }
 
-.filter-bar__toggle:focus-visible {
-  outline: var(--border-width) solid var(--riso-blue);
-  outline-offset: 2px;
-}
-
-@media (min-width: 640px) {
-  .filter-bar__chips {
-    flex-wrap: wrap;
-    overflow-x: visible;
-  }
-}

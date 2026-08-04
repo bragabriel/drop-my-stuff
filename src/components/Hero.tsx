@@ -10,28 +10,27 @@ export const HERO_ID = 'hero'
 function Hero() {
   return (
     <section className="hero" id={HERO_ID}>
-      <p className="hero__eyebrow">Inventário pessoal</p>
-      <h1 className="hero__headline">Estou me desfazendo de algumas coisas.</h1>
+      <h1 className="hero__headline">Estou vendendo algumas coisas minhas.</h1>
       <p className="hero__body">
-        Tudo aqui é meu e está em bom estado. Aceito Pix, dinheiro ou cartão. Me
-        chama no Instagram — ou no WhatsApp, se você já tem meu número.
+        Aceito Pix, dinheiro, cartão ou transferência. Me chama no Instagram — ou
+        no WhatsApp, se você já tem meu número.
       </p>
       <div className="hero__actions">
         <a
-          className="hero__action hero__action--primary"
+          className="hero__action"
           href={INSTAGRAM_URL}
           target="_blank"
           rel="noreferrer noopener"
         >
-          Chamar no Instagram
+          Instagram
         </a>
         <a
-          className="hero__action hero__action--secondary"
+          className="hero__action"
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer noopener"
         >
-          Chamar no WhatsApp
+          WhatsApp
         </a>
       </div>
     </section>

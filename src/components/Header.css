@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--paper);
-  border-bottom: var(--border-width) solid var(--ink);
+  background-color: var(--bg);
+  border-bottom: var(--border-width) solid var(--border);
 }
 
 .site-header__inner {
@@ -17,26 +17,21 @@
 }
 
 .site-header__wordmark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-lg);
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--text);
 }
 
 .site-header__link {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
   text-decoration: none;
   white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
 .site-header__link:hover {
-  color: var(--riso-pink-ink);
+  color: var(--text);
 }
 
 /* O @ completo nao cabe ao lado do wordmark em telas de 320px. */
@@ -55,13 +50,5 @@
 
   .site-header__inner {
     padding: var(--space-sm) var(--space-md);
-  }
-
-  .site-header__wordmark {
-    font-size: var(--text-xl);
-  }
-
-  .site-header__link {
-    font-size: var(--text-sm);
   }
 }

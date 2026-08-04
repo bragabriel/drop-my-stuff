@@ -8,23 +8,19 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2xs);
+  /* 48px e o minimo de toque; no celular ele fica so com o icone para nao
+     cobrir o "Tenho interesse" do card que estiver ao lado. */
   min-width: 48px;
   min-height: 48px;
-  padding: 0 var(--space-sm);
+  padding: 0 var(--space-2xs);
 
-  font-family: var(--font-mono);
-  font-weight: 700;
   font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   text-decoration: none;
 
-  color: var(--paper);
-  background-color: var(--riso-blue);
-  border: var(--border-width) solid var(--ink);
+  color: var(--bg);
+  background-color: var(--text);
+  border: none;
   border-radius: var(--radius-sm);
-  /* Deslocamento chapado — nunca sombra difusa (proibida no DESIGN.md) */
-  box-shadow: 3px 3px 0 0 var(--ink);
 
   /* Escondido por padrão: visibility garante saída real do fluxo de foco,
      não só opacidade. O delay na visibility segura a mudança até o fade
@@ -44,13 +40,7 @@
 }
 
 .instagram-fab:hover {
-  background-color: var(--ink);
-  border-color: var(--ink);
-}
-
-.instagram-fab:focus-visible {
-  outline: var(--border-width) solid var(--riso-blue);
-  outline-offset: 2px;
+  background-color: var(--text-muted);
 }
 
 .instagram-fab__icon {
