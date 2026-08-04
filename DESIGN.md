@@ -40,13 +40,12 @@ Sem modo escuro nesta etapa.
 
 ### Nota sobre o rosa do estado "vendido"
 
-Como texto puro sobre branco, o rosa `--accent` mede abaixo do mínimo AA
-para texto normal — por isso o rótulo "Vendido" no rodapé do card usa peso
-500 em tamanho reduzido (uso pontual, curto, com contexto reforçado pela
-foto dessaturada ao lado). No carimbo sobre a foto, o rosa é fundo chapado
-com texto em `--text` por cima, o que passa em contraste com folga. Prefira
-sempre essa combinação (fundo rosa + texto escuro) a usar rosa como cor de
-texto em qualquer novo uso do estado vendido.
+Como texto puro sobre branco, o rosa `--accent` mede ~2.9:1 e reprova no
+mínimo AA. Por isso ele **nunca é cor de texto**: tanto o carimbo sobre a
+foto quanto o rótulo "Vendido" no rodapé do card são fundo rosa chapado com
+texto em `--text` por cima, o que passa com folga. Em qualquer novo uso do
+estado vendido, prefira sempre essa inversão a escurecer o rosa — escurecer
+tira dele a qualidade fluorescente que faz o estado saltar.
 
 ## Tipografia
 
@@ -97,9 +96,17 @@ número do lote deixou de ser exibido — existe só como `id` interno.
 Elemento preservado da direção anterior — foi o único ponto elogiado. O
 carimbo rotacionado sobre a foto continua com uma camada fantasma
 levemente deslocada atrás (hoje em `--text`/cinza escuro, não mais azul) e
-o carimbo principal com fundo `--accent` e texto em `--text` por cima. A
-foto do item vendido continua dessaturada. Preço e CTA somem; no lugar do
-preço aparece "Vendido" em `--accent`, peso 500.
+o carimbo principal com fundo `--accent` e texto em `--text` por cima.
+
+**A foto do item vendido fica colorida.** Ela já foi dessaturada, e isso
+custava caro: nas fotos do PC gamer o RGB é justamente o que elas têm de
+bom. O estado é comunicado pelo card, não por estragar a imagem.
+
+O card vendido tem identidade própria, para ser reconhecido de relance na
+grade sem precisar ler o carimbo: borda em `--accent` e corpo em
+`--accent-soft` (a mesma tinta lavada). Preço e CTA somem; no lugar do preço
+aparece "Vendido" numa pílula `--accent` com texto em `--text` — rosa como
+texto sobre branco mede ~2.9:1 e reprovaria em AA.
 
 ## Não faça
 

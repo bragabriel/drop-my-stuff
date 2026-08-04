@@ -13,6 +13,8 @@
   /* Rosa — reservado exclusivamente ao estado "vendido". Não aparece em
      link, hover, chip ativo ou foco em nenhum outro lugar do site. */
   --accent: #ff3d8b;
+  /* Lavada da mesma tinta, para o corpo do card vendido. */
+  --accent-soft: #fff4f8;
 
   /* Tipografia — uma família só */
   --font-body: 'Inter', system-ui, sans-serif;
