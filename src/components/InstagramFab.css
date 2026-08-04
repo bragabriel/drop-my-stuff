@@ -22,21 +22,7 @@
   border: none;
   border-radius: var(--radius-sm);
 
-  /* Escondido por padrão: visibility garante saída real do fluxo de foco,
-     não só opacidade. O delay na visibility segura a mudança até o fade
-     terminar; ao ficar visível a regra --visible zera o delay. */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity var(--transition-base), transform var(--transition-base),
-    visibility 0s linear var(--transition-base);
-}
-
-.instagram-fab--visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s linear 0s;
+  transition: background-color var(--transition-fast);
 }
 
 .instagram-fab:hover {

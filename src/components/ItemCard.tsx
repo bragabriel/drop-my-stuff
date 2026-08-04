@@ -2,7 +2,7 @@ import { useId, useState } from 'react'
 import type { Item } from '../types/item'
 import { CATEGORIES, CONDITION_INFO } from '../types/item'
 import { formatPrice } from '../utils/format'
-import { whatsappLinkFor } from '../utils/contact'
+import { INSTAGRAM_URL } from '../utils/contact'
 import MediaCarousel from './MediaCarousel'
 import './ItemCard.css'
 
@@ -67,11 +67,12 @@ function ItemCard({ item }: ItemCardProps) {
           {!sold && (
             <a
               className="item-card__cta"
-              href={whatsappLinkFor(item)}
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer noopener"
+              aria-label={`Me chamar no Insta sobre ${item.title}`}
             >
-              Tenho interesse
+              quero esse
             </a>
           )}
         </div>

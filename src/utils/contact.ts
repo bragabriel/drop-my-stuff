@@ -1,10 +1,3 @@
-import type { Item } from '../types/item';
-import { formatLot } from './format';
-
+// O WhatsApp e de proposito o unico canal que NAO aparece no site: quem tem o
+// numero ja tem. Nao reintroduza wa.me nem o telefone aqui.
 export const INSTAGRAM_URL = 'https://www.instagram.com/gabrielbraga.gbs/';
-export const WHATSAPP_NUMBER = '5519982930667';
-
-export function whatsappLinkFor(item: Item): string {
-  const message = `Oi Gabriel! Tenho interesse no lote ${formatLot(item.id)} — ${item.title}.`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}

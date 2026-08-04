@@ -74,11 +74,11 @@ function Showcase() {
     <section className="showcase" aria-labelledby="showcase-title">
       <div className="showcase__header">
         <h2 className="showcase__title" id="showcase-title">
-          O inventário
+          Dá uma olhada
         </h2>
         <p className="showcase__meta" aria-live="polite">
-          {visibleItems.length} {visibleItems.length === 1 ? 'item' : 'itens'} — {soldCount}{' '}
-          {soldCount === 1 ? 'vendido' : 'vendidos'}
+          {visibleItems.length} {visibleItems.length === 1 ? 'coisa' : 'coisas'} · {soldCount}{' '}
+          {soldCount === 1 ? 'já foi' : 'já foram'}
         </p>
       </div>
 
@@ -101,7 +101,7 @@ function Showcase() {
         </ul>
       ) : (
         <div className="showcase__empty">
-          <p>Nada aqui com esse filtro.</p>
+          <p>Não tem nada aqui nesse filtro.</p>
           <button type="button" className="showcase__empty-action" onClick={handleClearFilter}>
             Ver tudo
           </button>
