@@ -1,0 +1,183 @@
+.item-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper-shade);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .item-card:hover {
+    /* Deslocamento chapado no lugar de sombra difusa */
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 0 var(--ink);
+  }
+}
+
+.item-card__media {
+  position: relative;
+}
+
+/* O filtro fica no carrossel, nao no wrapper: filter afeta todos os
+   descendentes, e no wrapper ele dessaturaria o carimbo junto. */
+.item-card--sold .media-carousel {
+  filter: grayscale(0.85) brightness(0.92);
+}
+
+/* Carimbo "vendido" — elemento-assinatura, fora-de-registro de risografia */
+.item-card__stamp {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 2;
+}
+
+.item-card__stamp-layer {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-3xs) var(--space-xs);
+  border: var(--border-width) solid var(--riso-pink);
+  border-radius: var(--radius-sm);
+  transform: rotate(-8deg);
+}
+
+.item-card__stamp-layer--main {
+  background-color: var(--paper);
+  color: var(--riso-pink);
+}
+
+.item-card__stamp-layer--ghost {
+  position: absolute;
+  inset: 0;
+  border-color: var(--riso-blue);
+  color: var(--riso-blue);
+  background-color: var(--paper);
+  mix-blend-mode: multiply;
+  opacity: 0.7;
+  transform: translate(2px, 3px) rotate(-8deg);
+}
+
+.item-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  /* Precisa crescer para o margin-top:auto do rodape ter espaco livre
+     para distribuir; sem isso os precos nao alinham entre cards. */
+  flex: 1;
+}
+
+.item-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.item-card__lot {
+  color: var(--ink-soft);
+}
+
+.item-card__category {
+  color: var(--riso-blue);
+}
+
+.item-card__title {
+  font-size: var(--text-lg);
+  color: var(--ink);
+}
+
+.item-card__summary {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.item-card__description {
+  font-size: var(--text-sm);
+  color: var(--ink);
+}
+
+.item-card__toggle {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  /* Área de toque mínima sem alterar o layout visual do texto */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.item-card__toggle:hover {
+  color: var(--riso-blue);
+}
+
+/* Empurra o rodape para a base para os precos alinharem entre cards de
+   alturas diferentes na mesma linha do grid. */
+.item-card__body > .item-card__footer {
+  margin-top: auto;
+}
+
+.item-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xs);
+}
+
+.item-card__price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--ink);
+}
+
+.item-card__sold-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--riso-pink);
+}
+
+.item-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: var(--space-2xs) var(--space-sm);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--paper);
+  background-color: var(--riso-blue);
+  border: var(--border-width) solid var(--riso-blue);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.item-card__cta:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
