@@ -1,0 +1,78 @@
+.instagram-fab {
+  position: fixed;
+  right: max(var(--space-sm), env(safe-area-inset-right));
+  bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+  z-index: 200;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 var(--space-sm);
+
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+
+  color: var(--paper);
+  background-color: var(--riso-blue);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--radius-sm);
+  /* Deslocamento chapado — nunca sombra difusa (proibida no DESIGN.md) */
+  box-shadow: 3px 3px 0 0 var(--ink);
+
+  /* Escondido por padrão: visibility garante saída real do fluxo de foco,
+     não só opacidade. O delay na visibility segura a mudança até o fade
+     terminar; ao ficar visível a regra --visible zera o delay. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-base), transform var(--transition-base),
+    visibility 0s linear var(--transition-base);
+}
+
+.instagram-fab--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s linear 0s;
+}
+
+.instagram-fab:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
+
+.instagram-fab:focus-visible {
+  outline: var(--border-width) solid var(--riso-blue);
+  outline-offset: 2px;
+}
+
+.instagram-fab__icon {
+  flex-shrink: 0;
+}
+
+/* Espaço apertado no celular: só o ícone. aria-label na âncora garante
+   nome acessível mesmo com o texto fora do layout. */
+.instagram-fab__label {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instagram-fab,
+  .instagram-fab--visible {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (min-width: 480px) {
+  .instagram-fab__label {
+    display: inline;
+  }
+}
