@@ -6,28 +6,25 @@
 .site-footer__inner {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: var(--space-md) var(--space-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3xs);
-  /* Respiro para o InstagramFab (fixo, canto inferior direito) nunca
-     tapar o wordmark/linha do rodapé no celular. */
-  /* Folga suficiente para o botao flutuante nao cobrir o texto, sem abrir um
-     vao morto: o botao tem 48px de altura mais o afastamento da borda. */
+  padding: var(--space-lg) var(--space-sm);
+  /* Folga para o InstagramFab (fixo, canto inferior direito) nao tapar a
+     linha do rodape no celular. */
   padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
 }
 
 .site-footer__line {
   font-size: var(--text-sm);
   color: var(--text-muted);
+  text-align: center;
 }
 
 @media (min-width: 640px) {
   .site-footer__inner {
-    padding: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
     padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
-    flex-direction: row;
-    align-items: baseline;
-    gap: var(--space-sm);
   }
 }
