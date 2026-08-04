@@ -36,7 +36,7 @@
 }
 
 .site-header__link:hover {
-  color: var(--riso-pink);
+  color: var(--riso-pink-ink);
 }
 
 /* O @ completo nao cabe ao lado do wordmark em telas de 320px. */

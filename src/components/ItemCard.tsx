@@ -22,10 +22,12 @@ function ItemCard({ item }: ItemCardProps) {
       <div className="item-card__media">
         <MediaCarousel media={item.media} title={item.title} />
         {sold && (
-          <div className="item-card__stamp" aria-hidden="false">
-            <span className="item-card__stamp-layer item-card__stamp-layer--ghost" aria-hidden="true">
-              Vendido
-            </span>
+          <div className="item-card__stamp">
+            {/* A camada fantasma e o fora-de-registro da risografia: so a
+                caixa deslocada, sem texto — ela ja cobre a principal por
+                inset:0, e texto invisivel aqui vira ruido para leitor de
+                tela e falso positivo de contraste. */}
+            <span className="item-card__stamp-layer item-card__stamp-layer--ghost" aria-hidden="true" />
             <span className="item-card__stamp-layer item-card__stamp-layer--main">Vendido</span>
           </div>
         )}

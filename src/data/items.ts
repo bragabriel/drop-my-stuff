@@ -1,4 +1,9 @@
 import type { Item } from '../types/item';
+import { assetUrl } from '../utils/asset';
+
+function itemImage(filename: string): string {
+  return assetUrl(`assets/images/items/${filename}`);
+}
 
 export const ITEMS: Item[] = [
   {
@@ -11,9 +16,9 @@ export const ITEMS: Item[] = [
     category: 'moda',
     condition: 'bom',
     media: [
-      { type: 'image', src: '/assets/images/items/jacket-1.jpg', alt: 'Jaqueta de couro marrom com zíper frontal' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Jaqueta de couro marrom, vista de costas' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Detalhe dos bolsos internos da jaqueta' },
+      { type: 'image', src: itemImage('jacket-1.webp'), alt: 'Jaqueta de couro marrom com zíper frontal' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Jaqueta de couro marrom, vista de costas' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Detalhe dos bolsos internos da jaqueta' },
     ],
   },
   {
@@ -26,8 +31,8 @@ export const ITEMS: Item[] = [
     category: 'eletronicos',
     condition: 'excelente',
     media: [
-      { type: 'image', src: '/assets/images/items/macbook-1.jpg', alt: 'MacBook Pro prateado aberto, tela ligada' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'MacBook Pro fechado ao lado do carregador original' },
+      { type: 'image', src: itemImage('macbook-1.webp'), alt: 'MacBook Pro prateado aberto, tela ligada' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'MacBook Pro fechado ao lado do carregador original' },
     ],
     sold: true,
   },
@@ -41,10 +46,10 @@ export const ITEMS: Item[] = [
     category: 'casa',
     condition: 'regular',
     media: [
-      { type: 'image', src: '/assets/images/items/table-1.jpg', alt: 'Mesa de centro de madeira maciça em ambiente de sala' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Detalhe da superfície da mesa com marcas de uso' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Mesa de centro vista de lado' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Pernas de madeira da mesa de centro' },
+      { type: 'image', src: itemImage('table-1.webp'), alt: 'Mesa de centro de madeira maciça em ambiente de sala' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Detalhe da superfície da mesa com marcas de uso' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Mesa de centro vista de lado' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Pernas de madeira da mesa de centro' },
     ],
   },
   {
@@ -57,8 +62,8 @@ export const ITEMS: Item[] = [
     category: 'moda',
     condition: 'excelente',
     media: [
-      { type: 'image', src: '/assets/images/items/sneakers-1.jpg', alt: 'Tênis Nike Air Max preto e branco, vista lateral' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Par de tênis Nike Air Max dentro da caixa original' },
+      { type: 'image', src: itemImage('sneakers-1.webp'), alt: 'Tênis Nike Air Max preto e branco, vista lateral' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Par de tênis Nike Air Max dentro da caixa original' },
     ],
   },
   {
@@ -71,9 +76,9 @@ export const ITEMS: Item[] = [
     category: 'musica',
     condition: 'bom',
     media: [
-      { type: 'image', src: '/assets/images/items/guitar-1.jpg', alt: 'Violão acústico marrom encostado na parede' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Capa macia do violão com cordas extras ao lado' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Detalhe do tampo do violão' },
+      { type: 'image', src: itemImage('guitar-1.webp'), alt: 'Violão acústico marrom encostado na parede' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Capa macia do violão com cordas extras ao lado' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Detalhe do tampo do violão' },
     ],
   },
   {
@@ -86,8 +91,8 @@ export const ITEMS: Item[] = [
     category: 'casa',
     condition: 'bom',
     media: [
-      { type: 'image', src: '/assets/images/items/lamp-1.jpg', alt: 'Luminária de mesa LED articulada acesa' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Painel touch de controle da luminária' },
+      { type: 'image', src: itemImage('lamp-1.webp'), alt: 'Luminária de mesa LED articulada acesa' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Painel touch de controle da luminária' },
     ],
   },
   {
@@ -100,9 +105,9 @@ export const ITEMS: Item[] = [
     category: 'eletronicos',
     condition: 'regular',
     media: [
-      { type: 'image', src: '/assets/images/items/camera-1.jpg', alt: 'Câmera instantânea Polaroid OneStep+ na cor branca' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Câmera Polaroid vista de frente com lente em destaque' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Parte traseira da câmera Polaroid' },
+      { type: 'image', src: itemImage('camera-1.webp'), alt: 'Câmera instantânea Polaroid OneStep+ na cor branca' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Câmera Polaroid vista de frente com lente em destaque' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Parte traseira da câmera Polaroid' },
     ],
   },
   {
@@ -115,8 +120,8 @@ export const ITEMS: Item[] = [
     category: 'moda',
     condition: 'excelente',
     media: [
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Bolsa de couro preta com alça de mão' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Interior da bolsa de couro preta com compartimentos' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Bolsa de couro preta com alça de mão' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Interior da bolsa de couro preta com compartimentos' },
     ],
   },
   {
@@ -128,7 +133,7 @@ export const ITEMS: Item[] = [
     price: 40,
     category: 'eletronicos',
     condition: 'desgastado',
-    media: [{ type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Mouse gamer preto com iluminação RGB' }],
+    media: [{ type: 'image', src: itemImage('placeholder.svg'), alt: 'Mouse gamer preto com iluminação RGB' }],
   },
   {
     id: 10,
@@ -140,9 +145,9 @@ export const ITEMS: Item[] = [
     category: 'casa',
     condition: 'excelente',
     media: [
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Três vasos de cerâmica em tons terrosos lado a lado' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Vaso de cerâmica esmaltado visto de cima' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Conjunto de vasos vazios sobre uma mesa' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Três vasos de cerâmica em tons terrosos lado a lado' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Vaso de cerâmica esmaltado visto de cima' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Conjunto de vasos vazios sobre uma mesa' },
     ],
   },
   {
@@ -155,8 +160,8 @@ export const ITEMS: Item[] = [
     category: 'musica',
     condition: 'bom',
     media: [
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Pilha de discos de vinil de rock clássico' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Capa de disco de vinil em destaque na coleção' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Pilha de discos de vinil de rock clássico' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Capa de disco de vinil em destaque na coleção' },
     ],
   },
   {
@@ -169,8 +174,8 @@ export const ITEMS: Item[] = [
     category: 'casa',
     condition: 'bom',
     media: [
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Cadeira de escritório em mesh preto' },
-      { type: 'image', src: '/assets/images/items/placeholder.svg', alt: 'Base giratória e apoios de braço da cadeira' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Cadeira de escritório em mesh preto' },
+      { type: 'image', src: itemImage('placeholder.svg'), alt: 'Base giratória e apoios de braço da cadeira' },
     ],
   },
 ];

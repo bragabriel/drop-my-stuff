@@ -42,22 +42,27 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: var(--space-3xs) var(--space-xs);
-  border: var(--border-width) solid var(--riso-pink);
+  border: var(--border-width) solid var(--ink);
   border-radius: var(--radius-sm);
   transform: rotate(-8deg);
 }
 
+/* O rosa fluorescente entra como PREENCHIMENTO, com o texto em tinta escura
+   por cima. Como cor de texto ele reprova em contraste (2.7:1 sobre papel);
+   como area chapada ele passa com folga e ainda fica mais presente. */
 .item-card__stamp-layer--main {
-  background-color: var(--paper);
-  color: var(--riso-pink);
+  background-color: var(--riso-pink);
+  color: var(--ink);
 }
 
 .item-card__stamp-layer--ghost {
   position: absolute;
   inset: 0;
   border-color: var(--riso-blue);
-  color: var(--riso-blue);
-  background-color: var(--paper);
+  /* O texto so existe para a caixa fantasma medir igual a principal; ele
+     nunca e visto (era azul sobre azul), entao fica transparente. */
+  color: transparent;
+  background-color: var(--riso-blue);
   mix-blend-mode: multiply;
   opacity: 0.7;
   transform: translate(2px, 3px) rotate(-8deg);
@@ -154,7 +159,11 @@
   font-size: var(--text-base);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--riso-pink);
+  /* Mesma regra do carimbo: rosa preenche, tinta escura escreve. */
+  color: var(--ink);
+  background-color: var(--riso-pink);
+  padding: var(--space-3xs) var(--space-2xs);
+  border-radius: var(--radius-sm);
 }
 
 .item-card__cta {

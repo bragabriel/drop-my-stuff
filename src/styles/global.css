@@ -97,7 +97,9 @@ button {
 
 ::selection {
   background-color: var(--riso-pink);
-  color: var(--paper);
+  /* --ink sobre --riso-pink mede ~5.35:1; --paper sobre --riso-pink mede
+     ~2.7:1 e falhava a leitura do texto selecionado. */
+  color: var(--ink);
 }
 
 /* Visualmente oculto, mas disponível para leitores de tela */

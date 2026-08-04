@@ -24,10 +24,32 @@ Isso significa, na prática:
 | `--ink` | `#17171C` | Texto principal, bordas, quase preto |
 | `--ink-soft` | `#55555F` | Texto secundário, metadados discretos |
 | `--riso-blue` | `#2B44A8` | Tinta primária — links, chips ativos, ações primárias, foco de teclado |
-| `--riso-pink` | `#FF3D8B` | Tinta fluorescente — elemento-assinatura, hover, estado "vendido" |
+| `--riso-pink` | `#FF3D8B` | Tinta fluorescente — elemento-assinatura, hover, estado "vendido". **Só para preenchimentos/fundos e áreas grandes** — não passa em contraste como texto sobre papel (ver nota abaixo) |
+| `--riso-pink-ink` | `#A81155` | Variante escura do pink, só para **texto ou bordas com significado** sobre `--paper`/`--paper-shade` (label "vendido", chip ativo, links em hover) |
 | `--riso-overlap` | `#5B2E86` | Simula o multiply de blue + pink; usar com muita parcimônia (nunca como cor de base) |
 
 Sem modo escuro nesta etapa.
+
+### Nota de contraste (auditoria de acessibilidade)
+
+`--riso-pink` sobre `--paper` mede ~2.7:1 e sobre `--paper-shade` ~2.4:1 —
+abaixo do mínimo WCAG AA (3:1 para elementos gráficos/UI, 4.5:1 para texto
+normal). Isso reprovava o carimbo "Vendido", o rótulo de preço vendido, o
+chip "Esconder vendidos" ativo e os links em hover. `--riso-blue` e
+`--ink-soft` sobre `--paper` passam (~6.8:1 e ~5.96:1) e não precisaram de
+ajuste. A correção foi introduzir `--riso-pink-ink` (mede ~5.9:1 sobre
+`--paper` e ~5.2:1 sobre `--paper-shade`) para todo uso de pink como texto
+ou borda-com-significado; `--riso-pink` continua reservado para
+preenchimentos/fundos de área grande, onde a tinta original mantém a
+identidade fluorescente do site.
+
+**Regra prática: o rosa preenche, nunca escreve.** No carimbo de "vendido" e
+no rótulo de vendido do rodapé do card, a primeira tentativa foi escurecer o
+rosa para virar cor de texto — e o carimbo perdeu a qualidade fluorescente
+que define o conceito. A solução melhor foi inverter: `--riso-pink` como
+fundo chapado com `--ink` escrevendo por cima. Passa em contraste com folga
+(~5.4:1), deixa a tinta-assinatura mais presente, e é mais fiel a um carimbo
+de verdade. Prefira sempre essa inversão a escurecer o rosa.
 
 ## Tipografia
 
