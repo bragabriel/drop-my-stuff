@@ -1,0 +1,96 @@
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.filter-bar__chips {
+  display: flex;
+  gap: var(--space-2xs);
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-3xs);
+}
+
+.filter-bar__chips::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-bar__chip {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  min-height: 44px;
+  padding: var(--space-2xs) var(--space-sm);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background-color: transparent;
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.filter-bar__chip[aria-pressed='true'] {
+  background-color: var(--riso-blue);
+  border-color: var(--riso-blue);
+  color: var(--paper);
+}
+
+.filter-bar__chip:hover {
+  border-color: var(--riso-blue);
+}
+
+.filter-bar__chip:focus-visible {
+  outline: var(--border-width) solid var(--riso-blue);
+  outline-offset: 2px;
+}
+
+.filter-bar__count {
+  opacity: 0.75;
+}
+
+.filter-bar__toggle {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-2xs) 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.filter-bar__toggle[aria-pressed='true'] {
+  color: var(--riso-pink);
+}
+
+.filter-bar__toggle:hover {
+  color: var(--riso-blue);
+}
+
+.filter-bar__toggle:focus-visible {
+  outline: var(--border-width) solid var(--riso-blue);
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .filter-bar__chips {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
