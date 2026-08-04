@@ -67,7 +67,7 @@ Não há painel de administração — o inventário é o array `ITEMS` em
   no array `media`. O `poster` é a imagem exibida antes do play e também
   entra em `public/assets/images/items/`.
 - **Itens sem foto própria ainda**: use `itemImage('placeholder.svg')`
-  como está feito nos itens de exemplo.
+  (o arquivo fica em `public/assets/images/items/placeholder.svg`).
 - **Marcar como vendido**: adicione `sold: true` ao item. O card ganha o
   carimbo "Vendido", vai para o fim da lista dentro da categoria e some do
   filtro quando "Esconder vendidos" está ativo. Para desfazer, remova a

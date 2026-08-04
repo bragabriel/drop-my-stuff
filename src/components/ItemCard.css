@@ -12,14 +12,20 @@
   border-color: var(--text-muted);
 }
 
-.item-card__media {
-  position: relative;
+/* Card vendido tem identidade propria: borda e fundo do corpo na cor do
+   estado, para ser reconhecido de relance na grade sem precisar ler o
+   carimbo. A foto fica colorida — dessaturar tirava o que ela tem de bom. */
+.item-card--sold,
+.item-card--sold:hover {
+  border-color: var(--accent);
 }
 
-/* O filtro fica no carrossel, nao no wrapper: filter afeta todos os
-   descendentes, e no wrapper ele dessaturaria o carimbo junto. */
-.item-card--sold .media-carousel {
-  filter: grayscale(0.85) brightness(0.92);
+.item-card--sold .item-card__body {
+  background-color: var(--accent-soft);
+}
+
+.item-card__media {
+  position: relative;
 }
 
 /* Carimbo "vendido" — elemento-assinatura, mantido do conceito anterior */
