@@ -1,0 +1,28 @@
+.condition-meter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.condition-meter__blocks {
+  display: flex;
+  gap: 3px;
+}
+
+.condition-meter__block {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--ink);
+}
+
+.condition-meter__block--filled {
+  background-color: var(--ink);
+}
+
+.condition-meter__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
