@@ -15,31 +15,8 @@
 .hero__body {
   font-size: var(--text-base);
   color: var(--text-muted);
-  max-width: 42ch;
+  max-width: 46ch;
   margin-top: var(--space-xs);
-}
-
-.hero__actions {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-
-.hero__action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-sm);
-  text-decoration: none;
-  color: var(--text);
-  padding: var(--space-2xs) var(--space-sm);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color var(--transition-fast);
-}
-
-.hero__action:hover {
-  border-color: var(--text);
 }
 
 @media (min-width: 640px) {

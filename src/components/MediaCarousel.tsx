@@ -70,8 +70,8 @@ function MediaCarousel({ media, title }: MediaCarouselProps) {
         tabIndex={0}
         aria-label={`Fotos de ${title}`}
       >
-        {/* O indice e a chave porque varios itens repetem o mesmo
-            placeholder.svg e a ordem da midia e fixa. */}
+        {/* O indice e a chave porque a ordem da midia e fixa e o mesmo arquivo
+            pode se repetir dentro de um item. */}
         {media.map((item, index) => (
           <div
             className="media-carousel__slide"
