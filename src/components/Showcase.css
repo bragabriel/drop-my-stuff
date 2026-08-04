@@ -30,6 +30,9 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
+  /* Sem stretch: com ele, expandir "detalhes" de um card esticava todos os
+     vizinhos da mesma fileira junto. */
+  align-items: start;
   gap: var(--space-md);
 }
 

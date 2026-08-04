@@ -145,13 +145,14 @@
 /* Uma linha so para as duas acoes, presa a base para os cards alinharem
    entre alturas diferentes na mesma linha do grid. */
 /* Ambas a esquerda de proposito: o botao flutuante do Instagram e fixo no
-   canto inferior direito e cobriria o CTA se ele fosse alinhado a direita. */
+   canto inferior direito e cobriria o CTA se ele fosse alinhado a direita.
+   Sem margin-top:auto — o card agora tem a altura do proprio conteudo, e o
+   auto so abria um vao antes de "detalhes". */
 .item-card__actions {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: var(--space-md);
-  margin-top: auto;
   padding-top: var(--space-2xs);
 }
 

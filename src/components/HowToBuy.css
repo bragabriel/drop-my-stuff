@@ -19,10 +19,11 @@
   color: var(--text);
 }
 
+/* Sem max-width: as frases sao curtas e o limite anterior quebrava linha no
+   meio delas no desktop. */
 .how-to-buy__note {
   font-size: var(--text-base);
   color: var(--text-muted);
-  max-width: 56ch;
 }
 
 .how-to-buy__links {

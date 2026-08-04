@@ -23,4 +23,11 @@
   .hero {
     padding: var(--space-lg) var(--space-md) var(--space-md);
   }
+
+  /* Mais largo no desktop para "vendendo!" nao sobrar sozinho na ultima
+     linha; balance distribui as linhas em vez de encher a primeira. */
+  .hero__headline {
+    max-width: 46ch;
+    text-wrap: balance;
+  }
 }

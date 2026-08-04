@@ -1,7 +1,7 @@
 import { INSTAGRAM_URL } from '../utils/contact'
 import './HowToBuy.css'
 
-const PAYMENT_METHODS = ['Pix', 'Dinheiro', 'Cartão', 'Transferência']
+const PAYMENT_METHODS = ['Pix', 'Dinheiro', 'Parcelo via Mercado Pago (+ taxa do app)']
 
 function HowToBuy() {
   return (
@@ -12,14 +12,9 @@ function HowToBuy() {
 
       <p className="how-to-buy__methods">{PAYMENT_METHODS.join(' · ')}</p>
 
-      <p className="how-to-buy__note">
-        É tudo coisa minha, usada e bem cuidada. Gostou de algo? Me chama no Insta que a gente
-        combina o resto por lá.
-      </p>
-      <p className="how-to-buy__note">
-        O que já foi vendido continua aqui, só que carimbado — é por isso que alguns cards estão
-        marcados.
-      </p>
+      <p className="how-to-buy__note">É tudo coisa minha, usada e bem cuidada.</p>
+
+      <p className="how-to-buy__note">Quer trocar ideia sobre algum item? Negociar?</p>
 
       <div className="how-to-buy__links">
         <a
