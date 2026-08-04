@@ -1,0 +1,93 @@
+.hero {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-sm);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--riso-blue);
+  margin-bottom: var(--space-sm);
+}
+
+/* Syne ExtraBold e uma fonte larga: a escala de --text-4xl esta calibrada para
+   "desfazendo" (a palavra mais longa) caber inteira a partir de 320px. */
+.hero__headline {
+  font-size: var(--text-4xl);
+  max-width: 16ch;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.hero__body {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+  max-width: 42ch;
+  margin-top: var(--space-md);
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-lg);
+}
+
+.hero__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-md);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.hero__action--primary {
+  background-color: var(--riso-blue);
+  color: var(--paper);
+  border-color: var(--riso-blue);
+}
+
+.hero__action--primary:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
+
+.hero__action--secondary {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+.hero__action--secondary:hover {
+  background-color: var(--riso-pink);
+  border-color: var(--riso-pink);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__action:hover {
+    transform: translate(-1px, -1px);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+
+  .hero__actions {
+    flex-direction: row;
+  }
+}
