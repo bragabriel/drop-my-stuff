@@ -2,6 +2,9 @@
   max-width: var(--content-max);
   margin: 0 auto;
   padding: var(--space-md) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
 .hero__headline {
@@ -19,6 +22,10 @@
   margin-top: var(--space-xs);
 }
 
+.hero__aside {
+  max-width: 22rem;
+}
+
 @media (min-width: 640px) {
   .hero {
     padding: var(--space-lg) var(--space-md) var(--space-md);
@@ -29,5 +36,25 @@
   .hero__headline {
     max-width: 46ch;
     text-wrap: balance;
+  }
+}
+
+/* So a partir daqui existe espaco vago a direita do texto para a coluna
+   lateral; abaixo disso ela segue empilhada. */
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .hero__main {
+    flex: 1 1 auto;
+  }
+
+  .hero__aside {
+    flex: 0 0 20rem;
+    margin-top: var(--space-2xs);
   }
 }

@@ -108,6 +108,21 @@ grade sem precisar ler o carimbo: borda em `--accent` e corpo em
 aparece "Vendido" numa pílula `--accent` com texto em `--text` — rosa como
 texto sobre branco mede ~2.9:1 e reprovaria em AA.
 
+## O bait do hero
+
+À direita do texto do hero (a partir de 900px, onde sobra espaço) fica um
+bloco clicável: "Por que estou vendendo os itens?" com a dica "clica aqui
+pra descobrir". O clique abre um diálogo que responde "Caiu no bait! Não
+vou contar, hahaha."
+
+É o único elemento puramente brincalhão do site, e é de propósito: um só.
+Ele usa a mesma paleta neutra do resto — a graça está no texto, não em
+cor nova. A leve rotação retoma o gesto do carimbo de vendido.
+
+Implementado com `<dialog>` nativo e `showModal()`, que já entrega foco
+preso dentro, Esc para fechar e devolução do foco ao botão de origem. Não
+troque por uma div com `position: fixed`.
+
 ## Não faça
 
 - Sem azul em lugar nenhum do site.
