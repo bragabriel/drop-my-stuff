@@ -64,7 +64,7 @@
 }
 
 .how-to-buy__link:hover {
-  color: var(--riso-pink);
+  color: var(--riso-pink-ink);
 }
 
 .how-to-buy__link:focus-visible {

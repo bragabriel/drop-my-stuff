@@ -5,8 +5,10 @@ const PAYMENT_METHODS = ['Pix', 'Dinheiro', 'Cartão', 'Transferência bancária
 
 function HowToBuy() {
   return (
-    <section className="how-to-buy">
-      <h2 className="how-to-buy__title">Como comprar</h2>
+    <section className="how-to-buy" aria-labelledby="how-to-buy-title">
+      <h2 className="how-to-buy__title" id="how-to-buy-title">
+        Como comprar
+      </h2>
 
       <ul className="how-to-buy__methods">
         {PAYMENT_METHODS.map((method) => (

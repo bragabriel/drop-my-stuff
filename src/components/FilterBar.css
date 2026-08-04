@@ -76,7 +76,7 @@
 }
 
 .filter-bar__toggle[aria-pressed='true'] {
-  color: var(--riso-pink);
+  color: var(--riso-pink-ink);
 }
 
 .filter-bar__toggle:hover {

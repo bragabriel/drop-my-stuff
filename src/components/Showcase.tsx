@@ -71,9 +71,11 @@ function Showcase() {
   }
 
   return (
-    <section className="showcase">
+    <section className="showcase" aria-labelledby="showcase-title">
       <div className="showcase__header">
-        <h2 className="showcase__title">O inventário</h2>
+        <h2 className="showcase__title" id="showcase-title">
+          O inventário
+        </h2>
         <p className="showcase__meta" aria-live="polite">
           {visibleItems.length} {visibleItems.length === 1 ? 'item' : 'itens'} — {soldCount}{' '}
           {soldCount === 1 ? 'vendido' : 'vendidos'}

@@ -11,6 +11,11 @@
   --ink-soft: #55555f;
   --riso-blue: #2b44a8;
   --riso-pink: #ff3d8b;
+  /* --riso-pink sobre --paper/--paper-shade mede ~2.7:1 — falha WCAG AA
+     (mínimo 3:1 para elementos gráficos, 4.5:1 para texto). Esta variante
+     mais escura é para qualquer TEXTO ou borda-com-significado em pink
+     sobre papel; mede ~5.9:1 (paper) e ~5.2:1 (paper-shade). Ver DESIGN.md. */
+  --riso-pink-ink: #a81155;
   --riso-overlap: #5b2e86;
 
   /* Tipografia */
