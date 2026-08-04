@@ -1,0 +1,79 @@
+.how-to-buy {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-sm);
+  border-top: var(--border-width) solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.how-to-buy__title {
+  font-size: var(--text-2xl);
+  color: var(--ink);
+}
+
+/* Lista chapada — sem cards, sem ícone/emoji por item. */
+.how-to-buy__methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-md);
+}
+
+.how-to-buy__method {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  /* Bloco de tinta a esquerda em vez de sublinhado: texto azul sublinhado
+     le como link, e estes rotulos nao sao clicaveis. */
+  padding-left: var(--space-2xs);
+  border-left: 6px solid var(--riso-blue);
+}
+
+.how-to-buy__note {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+
+.how-to-buy__links {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-2xs);
+}
+
+.how-to-buy__link {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.how-to-buy__link:hover {
+  color: var(--riso-pink);
+}
+
+.how-to-buy__link:focus-visible {
+  outline: var(--border-width) solid var(--riso-blue);
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .how-to-buy {
+    padding: var(--space-xl) var(--space-md);
+  }
+}

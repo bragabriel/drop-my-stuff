@@ -9,7 +9,17 @@
   padding: var(--space-md) var(--space-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-3xs);
+  /* Respiro para o InstagramFab (fixo, canto inferior direito) nunca
+     tapar o wordmark/linha do rodapé no celular. */
+  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom));
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-base);
+  color: var(--ink);
 }
 
 .site-footer__line {
@@ -19,30 +29,12 @@
   letter-spacing: 0.02em;
 }
 
-.site-footer__links {
-  display: flex;
-  gap: var(--space-md);
-}
-
-.site-footer__links a {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.site-footer__links a:hover {
-  color: var(--riso-pink);
-}
-
 @media (min-width: 640px) {
   .site-footer__inner {
     padding: var(--space-md);
+    padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-sm);
   }
 }
