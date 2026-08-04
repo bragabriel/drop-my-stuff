@@ -2,106 +2,115 @@
 
 ## Conceito
 
-**Zine de risografia.** O site se comporta como uma publicação pessoal de
-tiragem pequena, feita para catalogar coisas que estão sendo deixadas para
-trás. A referência é a impressão em risógrafo: tintas chapadas em uma ou
-duas cores por vez, um leve fora-de-registro entre camadas, papel com
-granulação visível. É um objeto impresso, não uma tela de vidro.
+**Vitrine minimalista.** O site é um negócio simples para exibir coisas à
+venda — não um zine, não uma peça de identidade visual. A foto de cada item
+é o conteúdo; a interface existe só para deixá-la legível e não deve
+competir com ela em nenhum momento.
 
-Isso significa, na prática:
+Na prática:
 
-- Formas sólidas e bem definidas, não gradientes.
-- Contraste de tinta sobre papel, não profundidade simulada com sombra.
-- Uma textura de fundo constante que lembra a fibra do papel.
-- Tipografia com peso e caráter — o Syne carrega a personalidade da marca.
+- Fundo branco. As fotos dos itens têm fundo branco de estúdio — o site
+  precisa encaixar com elas em vez de criar uma moldura colorida ao redor.
+- Uma família tipográfica só, usada em todo o site — nada de trocar de
+  fonte por seção ou por tipo de conteúdo.
+- Hierarquia visual por tamanho e peso da fonte, não por cor. A cor é
+  praticamente monocromática: preto sobre branco, com um cinza para texto
+  secundário.
+- Um único acento de cor — reservado inteiramente ao estado "vendido" — e
+  nenhuma outra função no site usa essa cor.
+- Cada elemento do card precisa justificar sua existência. Menos campos,
+  mais espaço para a foto.
 
 ## Tokens de cor
 
 | Token | Hex | Uso |
 |---|---|---|
-| `--paper` | `#EAE7DE` | Fundo da página — papel jornal quente |
-| `--paper-shade` | `#DEDACF` | Superfícies de card, divisores, áreas de destaque sutil |
-| `--ink` | `#17171C` | Texto principal, bordas, quase preto |
-| `--ink-soft` | `#55555F` | Texto secundário, metadados discretos |
-| `--riso-blue` | `#2B44A8` | Tinta primária — links, chips ativos, ações primárias, foco de teclado |
-| `--riso-pink` | `#FF3D8B` | Tinta fluorescente — elemento-assinatura, hover, estado "vendido". **Só para preenchimentos/fundos e áreas grandes** — não passa em contraste como texto sobre papel (ver nota abaixo) |
-| `--riso-pink-ink` | `#A81155` | Variante escura do pink, só para **texto ou bordas com significado** sobre `--paper`/`--paper-shade` (label "vendido", chip ativo, links em hover) |
-| `--riso-overlap` | `#5B2E86` | Simula o multiply de blue + pink; usar com muita parcimônia (nunca como cor de base) |
+| `--bg` | `#FFFFFF` | Fundo da página |
+| `--surface` | `#FAFAFA` | Fundo sutil quando é preciso separar uma área (ex: estado vazio, chip ativo) |
+| `--text` | `#111113` | Texto principal, títulos, bordas com significado |
+| `--text-muted` | `#6E6E73` | Texto secundário: meta, categoria, condição, links utilitários |
+| `--border` | `#E6E6E8` | Hairlines — divisores, bordas de card, bordas de chip |
+| `--accent` | `#FF3D8B` | Rosa — **exclusivo do estado "vendido"** (carimbo e rótulo de preço). Não aparece em link, hover, chip ativo, foco ou qualquer outro elemento. |
+
+Estados ativos, hover e foco usam somente preto/cinza (`--text`,
+`--text-muted`, `--border`). Nenhum azul em lugar nenhum do site — a cor
+antiga da direção anterior foi removida por completo.
 
 Sem modo escuro nesta etapa.
 
-### Nota de contraste (auditoria de acessibilidade)
+### Nota sobre o rosa do estado "vendido"
 
-`--riso-pink` sobre `--paper` mede ~2.7:1 e sobre `--paper-shade` ~2.4:1 —
-abaixo do mínimo WCAG AA (3:1 para elementos gráficos/UI, 4.5:1 para texto
-normal). Isso reprovava o carimbo "Vendido", o rótulo de preço vendido, o
-chip "Esconder vendidos" ativo e os links em hover. `--riso-blue` e
-`--ink-soft` sobre `--paper` passam (~6.8:1 e ~5.96:1) e não precisaram de
-ajuste. A correção foi introduzir `--riso-pink-ink` (mede ~5.9:1 sobre
-`--paper` e ~5.2:1 sobre `--paper-shade`) para todo uso de pink como texto
-ou borda-com-significado; `--riso-pink` continua reservado para
-preenchimentos/fundos de área grande, onde a tinta original mantém a
-identidade fluorescente do site.
-
-**Regra prática: o rosa preenche, nunca escreve.** No carimbo de "vendido" e
-no rótulo de vendido do rodapé do card, a primeira tentativa foi escurecer o
-rosa para virar cor de texto — e o carimbo perdeu a qualidade fluorescente
-que define o conceito. A solução melhor foi inverter: `--riso-pink` como
-fundo chapado com `--ink` escrevendo por cima. Passa em contraste com folga
-(~5.4:1), deixa a tinta-assinatura mais presente, e é mais fiel a um carimbo
-de verdade. Prefira sempre essa inversão a escurecer o rosa.
+Como texto puro sobre branco, o rosa `--accent` mede abaixo do mínimo AA
+para texto normal — por isso o rótulo "Vendido" no rodapé do card usa peso
+500 em tamanho reduzido (uso pontual, curto, com contexto reforçado pela
+foto dessaturada ao lado). No carimbo sobre a foto, o rosa é fundo chapado
+com texto em `--text` por cima, o que passa em contraste com folga. Prefira
+sempre essa combinação (fundo rosa + texto escuro) a usar rosa como cor de
+texto em qualquer novo uso do estado vendido.
 
 ## Tipografia
 
-Três famílias, cada uma com um papel fixo — não se misturam fora do seu uso.
+Uma família só: **Inter** (Google Fonts, pesos 400, 500, 600), com
+fallback de sistema. Nenhuma fonte monoespaçada em lugar nenhum — preço,
+categoria, condição, filtros e botões usam todos a mesma família.
 
-- **Syne** (700, 800) — família de display. Reservada para a wordmark, o
-  headline do hero e títulos de item. Uso restrito: é a voz mais alta da
-  página, então aparece pouco.
-- **Instrument Sans** (400, 500) — corpo de texto. Descrições, parágrafos,
-  qualquer prosa que precise ser lida com conforto.
-- **Space Mono** (400, 700) — camada utilitária. Preços, números de lote,
-  tags, labels e metadados. Sempre em caixa alta com letter-spacing quando
-  usada como label (ex: eyebrows, botões, links de rodapé).
+### Escala de tipo (fixa, sem `clamp()`)
 
-### Escala de tipo (fluida, `clamp()`)
-
-| Token | Faixa | Uso típico |
+| Token | Tamanho | Uso |
 |---|---|---|
-| `--text-xs` | 0.7rem → 0.78rem | labels, metadados |
-| `--text-sm` | 0.82rem → 0.9rem | botões, links utilitários |
-| `--text-base` | 1rem → 1.08rem | corpo de texto padrão |
-| `--text-lg` | 1.15rem → 1.35rem | parágrafo de destaque, wordmark no header |
-| `--text-xl` | 1.4rem → 1.85rem | subtítulos |
-| `--text-2xl` | 1.9rem → 2.75rem | títulos de seção |
-| `--text-3xl` | 2.4rem → 4rem | títulos grandes |
-| `--text-4xl` | 3rem → 5.5rem | headline do hero |
+| `--text-xs` | 12px | categoria, condição, contagem |
+| `--text-sm` | 13px | meta, links secundários |
+| `--text-base` | 15px | corpo, descrição |
+| `--text-md` | 16px | título do item, preço |
+| `--text-lg` | 20px | título de seção |
+| `--text-xl` | 24px | título do hero (teto da escala — nada no site é maior que isso) |
 
-## Elemento-assinatura
+Hierarquia vem de tamanho e peso (400/500/600), nunca de caixa alta com
+letter-spacing largo — exceção única: o carimbo "Vendido", que mantém
+caixa alta por ser, literalmente, um carimbo.
 
-O **overlay de granulação**: um ruído sutil (SVG `feTurbulence` como
-data-URI) aplicado como `background-image` fixo sobre toda a página,
-opacidade entre 0.035 e 0.05, `mix-blend-mode: multiply`. É o que faz a
-página parecer impressa em vez de renderizada. Estático — não anima, então
-não conflita com `prefers-reduced-motion`.
+## Bordas, raio e sombra
 
-Em segundo plano, o **rosa fluorescente** (`--riso-pink`) funciona como
-assinatura de interação: é a cor que aparece em hover, seleção de texto e no
-estado "vendido" — sempre pontual, nunca como cor de fundo de área grande.
+- Bordas: **1px**, sempre em `--border` (ou `--text` quando precisam ter
+  significado, como no carimbo de vendido).
+- Raio: **6px**, consistente em cards, chips, botões e imagens. Sem pill.
+- **Nenhuma sombra**, difusa ou chapada. Separação de camadas usa borda
+  hairline ou fundo `--surface`, nunca `box-shadow`.
+
+## Card de item
+
+Reduzido a quatro elementos visíveis na face do card:
+
+1. Foto (proporção 4:5, cantos superiores arredondados em 6px).
+2. Título + preço na mesma linha (16px/500 à esquerda, preço à direita).
+3. Categoria · condição, uma linha só, 12px `--text-muted`.
+4. "Tenho interesse" como link de texto — não botão preenchido.
+
+O resumo do item some da face do card; a descrição completa só aparece
+atrás do toggle "detalhes" (13px, link de texto). O medidor de blocos da
+condição foi removido — a palavra (ex: "Excelente") já comunica o estado,
+com a descrição completa disponível via `title` e para leitor de tela. O
+número do lote deixou de ser exibido — existe só como `id` interno.
+
+## Estado "vendido"
+
+Elemento preservado da direção anterior — foi o único ponto elogiado. O
+carimbo rotacionado sobre a foto continua com uma camada fantasma
+levemente deslocada atrás (hoje em `--text`/cinza escuro, não mais azul) e
+o carimbo principal com fundo `--accent` e texto em `--text` por cima. A
+foto do item vendido continua dessaturada. Preço e CTA somem; no lugar do
+preço aparece "Vendido" em `--accent`, peso 500.
 
 ## Não faça
 
-- Sem gradientes, em nenhuma cor ou combinação.
-- Sem sombras difusas / soft shadow (`box-shadow` com blur alto). Se precisar
-  separar camadas, use borda sólida (`--ink`, 2px) ou deslocamento chapado
-  (offset sem blur), não profundidade simulada.
-- Sem glassmorphism (blur de fundo, transparência com desfoque).
-- Sem badge colorido de status genérico (verde = disponível, vermelho =
-  vendido, etc.). O estado "vendido" se comunica com a tinta do sistema
-  (`--riso-pink`) e tratamento tipográfico, não com uma pílula colorida solta.
-- Sem `border-radius` grande ou `border-radius: 9999px` (pill/full) em
-  cards ou botões — o riso é chapado, os cantos ficam discretos
-  (`--radius-sm` a `--radius-lg`, 2–6px).
-- Sem misturar as três famílias tipográficas fora dos papéis definidos acima
-  (ex: nunca usar Space Mono para prosa longa, nunca usar Syne para
-  metadados).
+- Sem azul em lugar nenhum do site.
+- Sem gradientes.
+- Sem sombra (difusa ou chapada) em nenhum elemento.
+- Sem glassmorphism.
+- Sem mais de uma família tipográfica.
+- Sem fonte monoespaçada.
+- Sem caixa alta com letter-spacing largo, exceto no carimbo de vendido.
+- Sem `--accent` fora do estado "vendido" — nem em link, nem em hover, nem
+  em chip ativo, nem em foco.
+- Sem textura, ruído ou overlay de papel — o fundo é liso, branco, sólido.
+- Sem `border-radius` grande ou pill em cards e botões.

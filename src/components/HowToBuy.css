@@ -2,44 +2,26 @@
   max-width: var(--content-max);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-sm);
-  border-top: var(--border-width) solid var(--ink);
+  border-top: var(--border-width) solid var(--border);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
 .how-to-buy__title {
-  font-size: var(--text-2xl);
-  color: var(--ink);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text);
 }
 
-/* Lista chapada — sem cards, sem ícone/emoji por item. */
 .how-to-buy__methods {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2xs) var(--space-md);
-}
-
-.how-to-buy__method {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-  /* Bloco de tinta a esquerda em vez de sublinhado: texto azul sublinhado
-     le como link, e estes rotulos nao sao clicaveis. */
-  padding-left: var(--space-2xs);
-  border-left: 6px solid var(--riso-blue);
+  font-size: var(--text-base);
+  color: var(--text);
 }
 
 .how-to-buy__note {
-  font-family: var(--font-body);
   font-size: var(--text-base);
-  color: var(--ink-soft);
+  color: var(--text-muted);
   max-width: 56ch;
 }
 
@@ -50,13 +32,10 @@
 }
 
 .how-to-buy__link {
-  font-family: var(--font-mono);
-  font-weight: 700;
   font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink);
-  text-decoration: none;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -64,12 +43,7 @@
 }
 
 .how-to-buy__link:hover {
-  color: var(--riso-pink-ink);
-}
-
-.how-to-buy__link:focus-visible {
-  outline: var(--border-width) solid var(--riso-blue);
-  outline-offset: 2px;
+  color: var(--text-muted);
 }
 
 @media (min-width: 640px) {

@@ -1,5 +1,5 @@
 .site-footer {
-  border-top: var(--border-width) solid var(--ink);
+  border-top: var(--border-width) solid var(--border);
   margin-top: var(--space-xl);
 }
 
@@ -12,21 +12,14 @@
   gap: var(--space-3xs);
   /* Respiro para o InstagramFab (fixo, canto inferior direito) nunca
      tapar o wordmark/linha do rodapé no celular. */
-  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom));
-}
-
-.site-footer__wordmark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-base);
-  color: var(--ink);
+  /* Folga suficiente para o botao flutuante nao cobrir o texto, sem abrir um
+     vao morto: o botao tem 48px de altura mais o afastamento da borda. */
+  padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
 }
 
 .site-footer__line {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
 }
 
 @media (min-width: 640px) {

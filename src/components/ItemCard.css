@@ -1,19 +1,15 @@
 .item-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--paper-shade);
-  border: var(--border-width) solid var(--ink);
+  background-color: var(--bg);
+  border: var(--border-width) solid var(--border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: transform var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .item-card:hover {
-    /* Deslocamento chapado no lugar de sombra difusa */
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 0 var(--ink);
-  }
+.item-card:hover {
+  border-color: var(--text-muted);
 }
 
 .item-card__media {
@@ -26,7 +22,7 @@
   filter: grayscale(0.85) brightness(0.92);
 }
 
-/* Carimbo "vendido" — elemento-assinatura, fora-de-registro de risografia */
+/* Carimbo "vendido" — elemento-assinatura, mantido do conceito anterior */
 .item-card__stamp {
   position: absolute;
   top: var(--space-sm);
@@ -36,79 +32,83 @@
 
 .item-card__stamp-layer {
   display: block;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-lg);
+  font-weight: 600;
+  font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: var(--space-3xs) var(--space-xs);
-  border: var(--border-width) solid var(--ink);
+  border: var(--border-width) solid var(--text);
   border-radius: var(--radius-sm);
   transform: rotate(-8deg);
 }
 
-/* O rosa fluorescente entra como PREENCHIMENTO, com o texto em tinta escura
-   por cima. Como cor de texto ele reprova em contraste (2.7:1 sobre papel);
-   como area chapada ele passa com folga e ainda fica mais presente. */
+/* O rosa entra como PREENCHIMENTO, com o texto em tinta escura por cima —
+   passa em contraste com folga e mantém o carimbo mais presente. */
 .item-card__stamp-layer--main {
-  background-color: var(--riso-pink);
-  color: var(--ink);
+  background-color: var(--accent);
+  color: var(--text);
 }
 
 .item-card__stamp-layer--ghost {
   position: absolute;
   inset: 0;
-  border-color: var(--riso-blue);
+  border-color: var(--text);
   /* O texto so existe para a caixa fantasma medir igual a principal; ele
-     nunca e visto (era azul sobre azul), entao fica transparente. */
+     nunca e visto, entao fica transparente. */
   color: transparent;
-  background-color: var(--riso-blue);
-  mix-blend-mode: multiply;
-  opacity: 0.7;
+  background-color: var(--text);
+  opacity: 0.55;
   transform: translate(2px, 3px) rotate(-8deg);
 }
 
 .item-card__body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-3xs);
   padding: var(--space-sm);
-  /* Precisa crescer para o margin-top:auto do rodape ter espaco livre
-     para distribuir; sem isso os precos nao alinham entre cards. */
   flex: 1;
 }
 
-.item-card__meta {
+.item-card__row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.item-card__lot {
-  color: var(--ink-soft);
-}
-
-.item-card__category {
-  color: var(--riso-blue);
+  gap: var(--space-sm);
 }
 
 .item-card__title {
-  font-size: var(--text-lg);
-  color: var(--ink);
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--text);
 }
 
-.item-card__summary {
-  font-size: var(--text-sm);
-  color: var(--ink-soft);
+.item-card__price {
+  font-size: var(--text-md);
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Rosa como texto sobre branco mede ~2.9:1 e reprova em AA. Preenchendo com
+   rosa e escrevendo em tinta escura passa, e casa com o carimbo. */
+.item-card__sold-label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text);
+  background-color: var(--accent);
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+.item-card__meta {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
 }
 
 .item-card__description {
   font-size: var(--text-sm);
-  color: var(--ink);
+  color: var(--text);
   /* Fichas tecnicas usam uma linha por componente; sem isto a descricao do
      PC vira um paragrafo unico ilegivel. */
   white-space: pre-line;
@@ -116,9 +116,8 @@
 
 .item-card__toggle {
   align-self: flex-start;
-  font-family: var(--font-body);
   font-size: var(--text-sm);
-  color: var(--ink);
+  color: var(--text-muted);
   background: none;
   border: none;
   padding: 0;
@@ -132,64 +131,35 @@
 }
 
 .item-card__toggle:hover {
-  color: var(--riso-blue);
+  color: var(--text);
 }
 
-/* Empurra o rodape para a base para os precos alinharem entre cards de
-   alturas diferentes na mesma linha do grid. */
-.item-card__body > .item-card__footer {
-  margin-top: auto;
-}
-
-.item-card__footer {
+/* Empurra o CTA para a base para os cards alinharem entre alturas
+   diferentes na mesma linha do grid. */
+/* Uma linha so para as duas acoes, presa a base para os cards alinharem
+   entre alturas diferentes na mesma linha do grid. */
+/* Ambas a esquerda de proposito: o botao flutuante do Instagram e fixo no
+   canto inferior direito e cobriria o CTA se ele fosse alinhado a direita. */
+.item-card__actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  margin-top: var(--space-2xs);
-}
-
-.item-card__price {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-base);
-  color: var(--ink);
-}
-
-.item-card__sold-label {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-base);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  /* Mesma regra do carimbo: rosa preenche, tinta escura escreve. */
-  color: var(--ink);
-  background-color: var(--riso-pink);
-  padding: var(--space-3xs) var(--space-2xs);
-  border-radius: var(--radius-sm);
+  justify-content: flex-start;
+  gap: var(--space-md);
+  margin-top: auto;
+  padding-top: var(--space-2xs);
 }
 
 .item-card__cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   min-height: 44px;
-  padding: var(--space-2xs) var(--space-sm);
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  color: var(--paper);
-  background-color: var(--riso-blue);
-  border: var(--border-width) solid var(--riso-blue);
-  border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
-  white-space: nowrap;
+  padding-top: var(--space-2xs);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--text);
 }
 
 .item-card__cta:hover {
-  background-color: var(--ink);
-  border-color: var(--ink);
+  color: var(--text-muted);
 }
