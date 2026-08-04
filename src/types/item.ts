@@ -52,7 +52,8 @@ export interface Item {
   /** linha curta (max ~90 caracteres) para o card */
   summary: string;
   description: string;
-  price: number;
+  /** Omitido em itens ja vendidos, cujo valor nao e exibido. */
+  price?: number;
   category: CategoryId;
   condition: Condition;
   media: Media[];

@@ -178,4 +178,44 @@ export const ITEMS: Item[] = [
       { type: 'image', src: itemImage('placeholder.svg'), alt: 'Base giratória e apoios de braço da cadeira' },
     ],
   },
+  {
+    id: 13,
+    title: 'PC Gamer Intel i9 + RTX 3060',
+    summary: 'Core i9 10900F, RTX 3060 12GB, 16GB RAM, 2TB em SSD. Gabinete com 10 fans RGB.',
+    description: [
+      'Processador: Intel Core i9 10900F (10ª geração), 10 núcleos, 20 threads, socket LGA 1200, 2.80 GHz.',
+      'Placa de vídeo: NVIDIA GeForce RTX 3060, 12 GB.',
+      'Placa-mãe: ASUS TUF Gaming Z490-Plus, Intel LGA 1200, ATX, DDR4.',
+      'Memória RAM: 16 GB BraveX Gamer RGB, DDR4, 3000 MHz.',
+      'Armazenamento: SSD NVMe Kingston de 1 TB (leitura 6.000 MB/s, escrita 4.000 MB/s) e SSD SATA WIN Memory de 1 TB (leitura 550 MB/s, escrita 500 MB/s).',
+      'Air cooler: Cooler Master MasterAir MA620P RGB, 120 mm.',
+      'Gabinete Aquário, com kit de 10 fans RGB e controladora.',
+      'Fonte: 550 W RGB.',
+    ].join('\n'),
+    category: 'eletronicos',
+    condition: 'bom',
+    media: [
+      {
+        type: 'image',
+        src: itemImage('pc-gamer-1.webp'),
+        alt: 'Interior do gabinete iluminado em azul, com nove fans RGB e a placa de vídeo à direita',
+      },
+      {
+        type: 'image',
+        src: itemImage('pc-gamer-2.webp'),
+        alt: 'Mesmo gabinete com os fans em vermelho e verde e a fita de LED acesa sobre a placa-mãe',
+      },
+      {
+        type: 'image',
+        src: itemImage('pc-gamer-3.webp'),
+        alt: 'Close do air cooler e das memórias BraveX iluminadas em roxo, ao lado da GeForce RTX',
+      },
+      {
+        type: 'image',
+        src: itemImage('pc-gamer-4.webp'),
+        alt: 'Gabinete visto de lado com o painel de vidro aberto, mostrando cooler e placa de vídeo',
+      },
+    ],
+    sold: true,
+  },
 ];

@@ -65,7 +65,9 @@ function ItemCard({ item }: ItemCardProps) {
             <span className="item-card__sold-label">Vendido</span>
           ) : (
             <>
-              <span className="item-card__price">{formatPrice(item.price)}</span>
+              {item.price !== undefined && (
+                <span className="item-card__price">{formatPrice(item.price)}</span>
+              )}
               <a
                 className="item-card__cta"
                 href={whatsappLinkFor(item)}

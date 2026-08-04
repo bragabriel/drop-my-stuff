@@ -109,6 +109,9 @@
 .item-card__description {
   font-size: var(--text-sm);
   color: var(--ink);
+  /* Fichas tecnicas usam uma linha por componente; sem isto a descricao do
+     PC vira um paragrafo unico ilegivel. */
+  white-space: pre-line;
 }
 
 .item-card__toggle {
