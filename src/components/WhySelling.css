@@ -75,6 +75,16 @@
   color: var(--text-muted);
 }
 
+/* Link inline, em tinta cheia sobre o texto apagado da frase, para se
+   destacar sem virar botao — o convite tem que ler como conversa. */
+.why-selling__link {
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
 .why-selling__close {
   align-self: flex-start;
   margin-top: var(--space-2xs);

@@ -112,8 +112,9 @@ texto sobre branco mede ~2.9:1 e reprovaria em AA.
 
 À direita do texto do hero (a partir de 900px, onde sobra espaço) fica um
 bloco clicável: "Por que estou vendendo os itens?" com a dica "clica aqui
-pra descobrir". O clique abre um diálogo que responde "Caiu no bait! Não
-vou contar, hahaha."
+pra descobrir". O clique abre um diálogo que responde "Segredo 🤫 — Em
+breve nos cinemas" e emenda um convite para gabrielbraga.dev, o site
+pessoal do dono. A piada é a isca; o link é o destino real.
 
 É o único elemento puramente brincalhão do site, e é de propósito: um só.
 Ele usa a mesma paleta neutra do resto — a graça está no texto, não em
