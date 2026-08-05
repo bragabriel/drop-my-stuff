@@ -33,9 +33,20 @@ function WhySelling() {
       >
         <div className="why-selling__panel">
           <h2 className="why-selling__title" id="why-selling-title">
-            Caiu no bait! 😄
+            Segredo 🤫
           </h2>
-          <p className="why-selling__text">Não vou contar, hahaha.</p>
+          <p className="why-selling__text">Em breve nos cinemas.</p>
+          <p className="why-selling__text">
+            Enquanto isso, se quiser saber o que eu faço:{' '}
+            <a
+              className="why-selling__link"
+              href="https://gabrielbraga.dev"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              gabrielbraga.dev
+            </a>
+          </p>
           <button type="button" className="why-selling__close" onClick={() => setOpen(false)}>
             Tá bom, tá bom
           </button>
