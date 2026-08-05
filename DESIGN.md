@@ -59,8 +59,8 @@ categoria, condição, filtros e botões usam todos a mesma família.
 |---|---|---|
 | `--text-xs` | 12px | categoria, condição, contagem |
 | `--text-sm` | 13px | meta, links secundários |
-| `--text-base` | 15px | corpo, descrição |
-| `--text-md` | 16px | título do item, preço |
+| `--text-base` | 15px | corpo, descrição, preço |
+| `--text-md` | 16px | título do item |
 | `--text-lg` | 20px | título de seção |
 | `--text-xl` | 24px | título do hero (teto da escala — nada no site é maior que isso) |
 
@@ -72,24 +72,39 @@ caixa alta por ser, literalmente, um carimbo.
 
 - Bordas: **1px**, sempre em `--border` (ou `--text` quando precisam ter
   significado, como no carimbo de vendido).
-- Raio: **6px**, consistente em cards, chips, botões e imagens. Sem pill.
+- Raio: escala deliberada, não um valor único.
+  - `--radius-sm` (8px) — botões, chips soltos.
+  - `--radius-md` (12px) — mídia, superfícies médias.
+  - `--radius-lg` (18px) — diálogo no desktop.
+  - `--radius-pill` (999px) — chips de filtro, FAB.
 - **Nenhuma sombra**, difusa ou chapada. Separação de camadas usa borda
   hairline ou fundo `--surface`, nunca `box-shadow`.
 
 ## Card de item
 
-Reduzido a quatro elementos visíveis na face do card:
+O card deixou de ser uma caixa com contorno — nada de borda nem fundo
+próprio em volta de tudo, que era o que fazia o site parecer "um monte de
+div". Em vez disso:
 
-1. Foto (proporção 4:5, cantos superiores arredondados em 6px).
-2. Título + preço na mesma linha (16px/500 à esquerda, preço à direita).
-3. Categoria · condição, uma linha só, 12px `--text-muted`.
-4. "Tenho interesse" como link de texto — não botão preenchido.
+1. **Foto**, proporção 4:5, arredondada nos quatro cantos em `--radius-md`,
+   com fundo `--surface` (as fotos têm fundo claro; a superfície sutil dá o
+   limite que a borda dava antes). No hover, a foto tem um leve
+   `scale(1.02)` com transição suave, contida pelo `overflow: hidden` do
+   próprio contêiner de mídia — respeita `prefers-reduced-motion`.
+2. Bloco de texto **solto direto sobre o fundo da página**, logo abaixo da
+   foto, sem caixa e sem padding lateral próprio: título + preço na mesma
+   linha (16px/500 à esquerda, preço 15px/500 com `tabular-nums` à
+   direita), categoria · condição (12px `--text-muted`) logo abaixo, bem
+   coladas — e um respiro maior separando esse grupo da foto acima e das
+   ações abaixo.
+3. Ações ("detalhes", "quero esse") como link de texto, 13px — não botão
+   preenchido.
 
 O resumo do item some da face do card; a descrição completa só aparece
-atrás do toggle "detalhes" (13px, link de texto). O medidor de blocos da
-condição foi removido — a palavra (ex: "Excelente") já comunica o estado,
-com a descrição completa disponível via `title` e para leitor de tela. O
-número do lote deixou de ser exibido — existe só como `id` interno.
+atrás do toggle "detalhes". O medidor de blocos da condição foi removido —
+a palavra (ex: "Excelente") já comunica o estado, com a descrição completa
+disponível via `title` e para leitor de tela. O número do lote deixou de
+ser exibido — existe só como `id` interno.
 
 ## Estado "vendido"
 
@@ -102,11 +117,18 @@ o carimbo principal com fundo `--accent` e texto em `--text` por cima.
 custava caro: nas fotos do PC gamer o RGB é justamente o que elas têm de
 bom. O estado é comunicado pelo card, não por estragar a imagem.
 
-O card vendido tem identidade própria, para ser reconhecido de relance na
-grade sem precisar ler o carimbo: borda em `--accent` e corpo em
-`--accent-soft` (a mesma tinta lavada). Preço e CTA somem; no lugar do preço
-aparece "Vendido" numa pílula `--accent` com texto em `--text` — rosa como
-texto sobre branco mede ~2.9:1 e reprovaria em AA.
+Como o card não tem mais contorno próprio para tingir, a identidade do
+estado vendido vai para a própria foto: um anel na cor do estado
+(`outline: 2px solid var(--accent)`, para dentro do contêiner de mídia),
+reconhecível de relance na grade sem precisar ler o carimbo. Preço e CTA
+somem; no lugar do preço aparece "Vendido" numa pílula `--accent` com texto
+em `--text` — rosa como texto sobre branco mede ~2.9:1 e reprovaria em AA.
+
+## Chips de filtro
+
+Pílulas (`--radius-pill`), sem borda em nenhum estado. Inativo: só texto em
+`--text-muted`. Ativo: fundo `--surface`, texto `--text` peso 500. Altura
+mínima de toque 44px e foco de teclado visível em ambos os estados.
 
 ## O bait do hero
 
@@ -124,6 +146,14 @@ Implementado com `<dialog>` nativo e `showModal()`, que já entrega foco
 preso dentro, Esc para fechar e devolução do foco ao botão de origem. Não
 troque por uma div com `position: fixed`.
 
+**Abaixo de 640px o diálogo vira bottom sheet**, não a caixa centralizada de
+desktop: largura total, colado na base da tela (`margin: auto auto 0`),
+cantos superiores arredondados em 20px e inferiores retos, com padding
+extra na base para a safe area do iOS. Entra deslizando de baixo
+(`translateY(100%)` → `0`) e o `::backdrop` faz fade — ambos desligados sob
+`prefers-reduced-motion`. A partir de 640px volta a ficar centralizado, com
+`--radius-lg` e mais padding interno.
+
 ## Não faça
 
 - Sem azul em lugar nenhum do site.
@@ -136,4 +166,3 @@ troque por uma div com `position: fixed`.
 - Sem `--accent` fora do estado "vendido" — nem em link, nem em hover, nem
   em chip ativo, nem em foco.
 - Sem textura, ruído ou overlay de papel — o fundo é liso, branco, sólido.
-- Sem `border-radius` grande ou pill em cards e botões.

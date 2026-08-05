@@ -33,7 +33,7 @@
   /* Sem stretch: com ele, expandir "detalhes" de um card esticava todos os
      vizinhos da mesma fileira junto. */
   align-items: start;
-  gap: var(--space-md);
+  gap: var(--space-lg) var(--space-md);
 }
 
 .showcase__grid-item {

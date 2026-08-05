@@ -13,8 +13,6 @@
   /* Rosa — reservado exclusivamente ao estado "vendido". Não aparece em
      link, hover, chip ativo ou foco em nenhum outro lugar do site. */
   --accent: #ff3d8b;
-  /* Lavada da mesma tinta, para o corpo do card vendido. */
-  --accent-soft: #fff4f8;
 
   /* Tipografia — uma família só */
   --font-body: 'Inter', system-ui, sans-serif;
@@ -37,10 +35,11 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
-  /* Raio — consistente, sem pill */
-  --radius-sm: 6px;
-  --radius-md: 6px;
-  --radius-lg: 6px;
+  /* Raio — escala deliberada, do sutil ao pill */
+  --radius-sm: 8px; /* botões, chips soltos */
+  --radius-md: 12px; /* mídia, superfícies médias */
+  --radius-lg: 18px; /* diálogo no desktop */
+  --radius-pill: 999px; /* chips de filtro, FAB */
 
   /* Transições */
   --transition-fast: 120ms ease;
