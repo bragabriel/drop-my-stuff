@@ -12,11 +12,10 @@ function HowToBuy() {
 
       <p className="how-to-buy__methods">{PAYMENT_METHODS.join(' · ')}</p>
 
-      <p className="how-to-buy__note">É tudo coisa minha, usada e bem cuidada.</p>
+      <p className="how-to-buy__note">Todos os itens são meus, usados mas em ótimo estado =)</p>
 
-      <p className="how-to-buy__note">Quer trocar ideia sobre algum item? Negociar?</p>
-
-      <div className="how-to-buy__links">
+      <div className="how-to-buy__contact">
+        <p className="how-to-buy__note">Quer trocar ideia sobre algum item? Negociar?</p>
         <a
           className="how-to-buy__link"
           href={INSTAGRAM_URL}

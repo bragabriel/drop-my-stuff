@@ -1,31 +1,26 @@
 .item-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: border-color var(--transition-fast);
-}
-
-.item-card:hover {
-  border-color: var(--text-muted);
-}
-
-/* Card vendido tem identidade propria: borda e fundo do corpo na cor do
-   estado, para ser reconhecido de relance na grade sem precisar ler o
-   carimbo. A foto fica colorida — dessaturar tirava o que ela tem de bom. */
-.item-card--sold,
-.item-card--sold:hover {
-  border-color: var(--accent);
-}
-
-.item-card--sold .item-card__body {
-  background-color: var(--accent-soft);
+  /* Respiro entre foto e texto — o card não tem mais caixa para separar os
+     dois, então o espaço em branco faz esse trabalho. */
+  gap: var(--space-md);
 }
 
 .item-card__media {
   position: relative;
+}
+
+/* Estado vendido: sem borda no card para tingir, então o anel vai direto na
+   foto — reconhecível de relance sem precisar ler o carimbo.
+   Precisa ser pseudo-elemento sobreposto: outline ou box-shadow inset no
+   contêiner ficam ATRAS das imagens, que pintam depois do pai. */
+.item-card--sold .item-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  pointer-events: none;
 }
 
 /* Carimbo "vendido" — elemento-assinatura, mantido do conceito anterior */
@@ -67,12 +62,12 @@
   transform: translate(2px, 3px) rotate(-8deg);
 }
 
+/* Texto direto sobre o fundo da página, sem caixa nem padding lateral
+   próprio — alinhado à esquerda com a foto acima dele. */
 .item-card__body {
   display: flex;
   flex-direction: column;
   gap: var(--space-3xs);
-  padding: var(--space-sm);
-  flex: 1;
 }
 
 .item-card__row {
@@ -85,13 +80,15 @@
 .item-card__title {
   font-size: var(--text-md);
   font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--text);
 }
 
 .item-card__price {
-  font-size: var(--text-md);
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--text);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
@@ -103,7 +100,7 @@
   color: var(--text);
   background-color: var(--accent);
   padding: 2px 8px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   white-space: nowrap;
 }
 
@@ -140,20 +137,15 @@
   color: var(--text);
 }
 
-/* Empurra o CTA para a base para os cards alinharem entre alturas
-   diferentes na mesma linha do grid. */
-/* Uma linha so para as duas acoes, presa a base para os cards alinharem
-   entre alturas diferentes na mesma linha do grid. */
+/* Separa o grupo de ações do grupo título/preço/meta acima. */
 /* Ambas a esquerda de proposito: o botao flutuante do Instagram e fixo no
-   canto inferior direito e cobriria o CTA se ele fosse alinhado a direita.
-   Sem margin-top:auto — o card agora tem a altura do proprio conteudo, e o
-   auto so abria um vao antes de "detalhes". */
+   canto inferior direito e cobriria o CTA se ele fosse alinhado a direita. */
 .item-card__actions {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: var(--space-md);
-  padding-top: var(--space-2xs);
+  padding-top: var(--space-sm);
 }
 
 .item-card__cta {

@@ -26,10 +26,19 @@
   color: var(--text-muted);
 }
 
-.how-to-buy__links {
+/* Pergunta e link na mesma linha — o link é a resposta direta à pergunta,
+   não um item de lista separado embaixo. Quebra em telas estreitas para o
+   link não espremer o texto. */
+/* Largura limitada: sem isso o space-between joga o link no extremo direito
+   da tela larga e ele deixa de ler como resposta da pergunta. */
+.how-to-buy__contact {
   display: flex;
-  gap: var(--space-md);
-  margin-top: var(--space-2xs);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2xs) var(--space-md);
+  margin-top: var(--space-xs);
+  max-width: 34rem;
 }
 
 .how-to-buy__link {

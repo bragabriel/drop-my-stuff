@@ -20,7 +20,7 @@
   color: var(--bg);
   background-color: var(--text);
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
 
   transition: background-color var(--transition-fast);
 }

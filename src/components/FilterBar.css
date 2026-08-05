@@ -22,17 +22,16 @@
   font-size: var(--text-sm);
   color: var(--text-muted);
   background-color: transparent;
-  border: var(--border-width) solid transparent;
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .filter-bar__chip[aria-pressed='true'] {
   color: var(--text);
   font-weight: 500;
   background-color: var(--surface);
-  border-color: var(--border);
 }
 
 .filter-bar__chip:hover {
