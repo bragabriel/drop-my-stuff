@@ -262,12 +262,12 @@ export const ITEMS: Item[] = [
   {
     id: 27,
     title: 'Livro: Código Limpo',
-    summary: 'Robert C. Martin, edição revisada. Capa e miolo em bom estado.',
+    summary: 'Robert C. Martin, edição revisada. Usado, mas em estado de novo.',
     description:
-      '"Código Limpo: Habilidades Práticas do Agile Software", de Robert C. Martin, edição revisada. Livro usado, capa e páginas em bom estado de conservação.',
+      '"Código Limpo: Habilidades Práticas do Agile Software", de Robert C. Martin, edição revisada. Único da lista que já foi usado, mas está em estado de novo, sem desgaste perceptível na capa ou nas páginas.',
     price: 0,
     category: 'livros',
-    condition: 'bom',
+    condition: 'excelente',
     media: [
       { type: 'image', src: itemImage('livro-codigolimpo-1.webp'), alt: 'Capa do livro Código Limpo' },
       { type: 'image', src: itemImage('livro-codigolimpo-2.webp'), alt: 'Lombada do livro Código Limpo' },
@@ -277,29 +277,29 @@ export const ITEMS: Item[] = [
   {
     id: 28,
     title: 'Livro: O Codificador Limpo',
-    summary: 'Robert C. Martin (The Clean Coder). Capa e miolo em bom estado.',
+    summary: 'Robert C. Martin (The Clean Coder). Ainda lacrado na embalagem original.',
     description:
-      '"O Codificador Limpo", de Robert C. Martin, sobre código limpo e conduta profissional de engenharia de software. Livro usado, em bom estado de conservação.',
+      '"O Codificador Limpo", de Robert C. Martin, sobre conduta profissional de engenharia de software. Exemplar novo, ainda lacrado na embalagem original.',
     price: 0,
     category: 'livros',
-    condition: 'bom',
+    condition: 'excelente',
     media: [
-      { type: 'image', src: itemImage('livro-codificadorlimpo-1.webp'), alt: 'Capa do livro O Codificador Limpo' },
-      { type: 'image', src: itemImage('livro-codificadorlimpo-2.webp'), alt: 'Contracapa do livro O Codificador Limpo' },
+      { type: 'image', src: itemImage('livro-codificadorlimpo-1.webp'), alt: 'Capa do livro O Codificador Limpo, lacrado' },
+      { type: 'image', src: itemImage('livro-codificadorlimpo-2.webp'), alt: 'Contracapa do livro O Codificador Limpo, lacrado' },
     ],
   },
   {
     id: 29,
     title: 'Livro: Microsserviços Prontos para Produção',
-    summary: 'Susan J. Fowler, editora Novatec. Capa e miolo em bom estado.',
+    summary: 'Susan J. Fowler, editora Novatec. Ainda lacrado na embalagem original.',
     description:
-      '"Microsserviços Prontos para Produção", de Susan J. Fowler (Novatec). Livro usado, em bom estado de conservação, ótimo para quem trabalha com arquitetura de software.',
+      '"Microsserviços Prontos para Produção", de Susan J. Fowler (Novatec), ótimo para quem trabalha com arquitetura de software. Exemplar novo, ainda lacrado na embalagem original.',
     price: 0,
     category: 'livros',
-    condition: 'bom',
+    condition: 'excelente',
     media: [
-      { type: 'image', src: itemImage('livro-microservicos-1.webp'), alt: 'Capa do livro Microsserviços Prontos para Produção' },
-      { type: 'image', src: itemImage('livro-microservicos-2.webp'), alt: 'Contracapa do livro Microsserviços Prontos para Produção' },
+      { type: 'image', src: itemImage('livro-microservicos-1.webp'), alt: 'Capa do livro Microsserviços Prontos para Produção, lacrado' },
+      { type: 'image', src: itemImage('livro-microservicos-2.webp'), alt: 'Contracapa do livro Microsserviços Prontos para Produção, lacrado' },
     ],
   },
   {
