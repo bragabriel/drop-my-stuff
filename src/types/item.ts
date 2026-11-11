@@ -3,6 +3,9 @@ export const CATEGORIES = [
   { id: 'casa', label: 'Casa' },
   { id: 'moda', label: 'Moda' },
   { id: 'musica', label: 'Música' },
+  { id: 'livros', label: 'Livros' },
+  { id: 'colecionaveis', label: 'Colecionáveis' },
+  { id: 'beleza', label: 'Beleza' },
 ] as const satisfies ReadonlyArray<{ id: string; label: string }>;
 
 export type CategoryId = (typeof CATEGORIES)[number]['id'];

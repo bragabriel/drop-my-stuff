@@ -28,3 +28,6 @@ coverage
 
 # Local tooling
 .tokensave/
+
+# Raw source photos/videos for listings (not for the repo)
+raw-photos/
