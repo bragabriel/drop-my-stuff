@@ -25,6 +25,11 @@ export const ITEMS: Item[] = [
     media: [
       {
         type: 'image',
+        src: itemImage('pc-gamer-5.webp'),
+        alt: 'Gabinete com fans em roxo e azul iluminados',
+      },
+      {
+        type: 'image',
         src: itemImage('pc-gamer-1.webp'),
         alt: 'Interior do gabinete iluminado em azul, com nove fans RGB e a placa de vídeo à direita',
       },
@@ -42,11 +47,6 @@ export const ITEMS: Item[] = [
         type: 'image',
         src: itemImage('pc-gamer-4.webp'),
         alt: 'Gabinete visto de lado com o painel de vidro aberto, mostrando cooler e placa de vídeo',
-      },
-      {
-        type: 'image',
-        src: itemImage('pc-gamer-5.webp'),
-        alt: 'Gabinete com fans em roxo e azul iluminados',
       },
       {
         type: 'image',
@@ -171,22 +171,6 @@ export const ITEMS: Item[] = [
   },
   {
     id: 20,
-    title: 'Mini luminária RGB de bolso (RGB Pocket Camp 2)',
-    summary: 'Luz de ambiente portátil com clipe e várias cores. Compacta.',
-    description:
-      'Mini luminária RGB de bolso (RGB Pocket Camp 2), recarregável via USB-C, com clipe de fixação e várias cores/efeitos de iluminação. Tamanho compacto, ótima para videochamadas, cenário de fotos ou ambientação.',
-    price: 0,
-    category: 'eletronicos',
-    condition: 'bom',
-    media: [
-      { type: 'image', src: itemImage('pocket-lamp-1.webp'), alt: 'Mini luminária RGB de bolso desligada, com painel de controle visível' },
-      { type: 'image', src: itemImage('pocket-lamp-2.webp'), alt: 'Mini luminária RGB de bolso acesa em branco no escuro' },
-      { type: 'image', src: itemImage('pocket-lamp-3.webp'), alt: 'Mini luminária RGB de bolso desligada, vista pelo lado do difusor' },
-      { type: 'image', src: itemImage('pocket-lamp-4.webp'), alt: 'Mini luminária RGB de bolso acesa em vermelho sobre tecido' },
-    ],
-  },
-  {
-    id: 21,
     title: 'Mouse Logitech G sem fio',
     summary: 'Mouse gamer sem fio com iluminação RGB. Sensor preciso, bom estado.',
     description:
@@ -201,11 +185,11 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 22,
-    title: 'Tripé + mini câmera de ação',
-    summary: 'Tripé/monopé extensível acompanhado de mini câmera de ação. Funcionando.',
+    id: 21,
+    title: 'Tripé + Mini Câmera de Ação + Luz LED Portátil',
+    summary: 'Kit tripé/monopé, mini câmera de ação e mini luminária RGB de bolso. Vendidos juntos.',
     description:
-      'Kit com tripé/monopé extensível e mini câmera de ação estilo GoPro. Ótimo para vídeos, vlogs e transmissões. Testado e funcionando normalmente.',
+      'Kit com tripé/monopé extensível, mini câmera de ação estilo GoPro e mini luminária RGB de bolso (RGB Pocket Camp 2) com clipe de fixação e várias cores/efeitos. Ótimo para vídeos, vlogs e transmissões. Testado e funcionando normalmente. Vendidos apenas juntos, como um único kit.',
     price: 0,
     category: 'eletronicos',
     condition: 'bom',
@@ -215,10 +199,14 @@ export const ITEMS: Item[] = [
       { type: 'image', src: itemImage('actioncam-1.webp'), alt: 'Mini câmera de ação montada no tripé' },
       { type: 'image', src: itemImage('actioncam-2.webp'), alt: 'Mini câmera de ação montada no tripé, outro ângulo' },
       { type: 'image', src: itemImage('actioncam-3.webp'), alt: 'Close da mini câmera de ação montada' },
+      { type: 'image', src: itemImage('pocket-lamp-1.webp'), alt: 'Mini luminária RGB de bolso desligada, com painel de controle visível' },
+      { type: 'image', src: itemImage('pocket-lamp-2.webp'), alt: 'Mini luminária RGB de bolso acesa em branco no escuro' },
+      { type: 'image', src: itemImage('pocket-lamp-3.webp'), alt: 'Mini luminária RGB de bolso desligada, vista pelo lado do difusor' },
+      { type: 'image', src: itemImage('pocket-lamp-4.webp'), alt: 'Mini luminária RGB de bolso acesa em vermelho sobre tecido' },
     ],
   },
   {
-    id: 23,
+    id: 22,
     title: 'Lote de bonecos Star Wars',
     summary: 'Mini figuras colecionáveis: stormtroopers, Chewbacca e chaveiros. Bom estado.',
     description:
@@ -235,7 +223,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 24,
+    id: 23,
     title: 'Pelúcia Grogu (Baby Yoda)',
     summary: 'Pelúcia macia do Grogu, personagem de The Mandalorian. Bom estado.',
     description:
@@ -250,7 +238,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 25,
+    id: 24,
     title: 'Boneco Doutor Estranho',
     summary: 'Mini figura colecionável da Marvel, sentado em pose de feitiço. Bom estado.',
     description:
@@ -265,7 +253,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 26,
+    id: 25,
     title: 'Livro: Código Limpo',
     summary: 'Robert C. Martin, edição revisada. Usado, mas em estado de novo.',
     description:
@@ -280,7 +268,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 27,
+    id: 26,
     title: 'Livro: O Codificador Limpo',
     summary: 'Robert C. Martin (The Clean Coder). Ainda lacrado na embalagem original.',
     description:
@@ -294,7 +282,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 28,
+    id: 27,
     title: 'Livro: Microsserviços Prontos para Produção',
     summary: 'Susan J. Fowler, editora Novatec. Ainda lacrado na embalagem original.',
     description:
@@ -308,7 +296,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 29,
+    id: 28,
     title: 'Livro: O Investidor Inteligente',
     summary: 'Benjamin Graham, ainda lacrado na embalagem original. Novo.',
     description:
@@ -323,7 +311,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 30,
+    id: 29,
     title: 'Lote de miniaturas Nintendo',
     summary: 'Figuras de Mario, Luigi, Donkey Kong e amigos. Bom estado.',
     description:
@@ -337,7 +325,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 31,
+    id: 30,
     title: 'Perfume Essencial Único (O Boticário)',
     summary: 'Fragrância amadeirada, pouco usado, acompanha caixa original.',
     description:
