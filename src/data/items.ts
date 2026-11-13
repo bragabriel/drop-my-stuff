@@ -108,31 +108,31 @@ export const ITEMS: Item[] = [
   },
   {
     id: 17,
-    title: 'Monitor AOC',
+    title: 'Monitor AOC Gaming',
     summary: 'Tela ligada e funcionando normalmente, sem pixels mortos aparentes.',
     description:
-      'Monitor AOC em pleno funcionamento, imagem nítida e sem pixels mortos aparentes. Boa opção para setup de trabalho ou jogos. Inclui ajustes de tela testados no menu de configurações.',
+      'Monitor AOC Gaming em pleno funcionamento, imagem nítida e sem pixels mortos aparentes. Boa opção para setup de trabalho ou jogos.',
     price: 0,
     category: 'eletronicos',
     condition: 'bom',
     media: [
-      { type: 'image', src: itemImage('monitor-1.webp'), alt: 'Tela do monitor exibindo padrão de pontos coloridos' },
-      { type: 'image', src: itemImage('monitor-2.webp'), alt: 'Menu de configurações de exibição do monitor' },
-      { type: 'image', src: itemImage('monitor-3.webp'), alt: 'Monitor exibindo papel de parede de paisagem' },
+      { type: 'image', src: itemImage('monitor-aoc.webp'), alt: 'Monitor AOC ligado exibindo calendário, visto de frente' },
+      { type: 'image', src: itemImage('monitor-aoc-2.webp'), alt: 'Parte traseira do monitor AOC com fita de LED vermelha' },
     ],
   },
   {
     id: 18,
-    title: 'Mousepad gamer DON',
-    summary: 'Mousepad estendido preto com detalhe gravado a laser. Pouco uso.',
+    title: 'Monitor Husky Gaming 24G30E',
+    summary: 'Tela curva, ligada e funcionando normalmente, sem pixels mortos aparentes.',
     description:
-      'Mousepad gamer estendido, na cor preta com detalhe vermelho gravado a laser. Superfície lisa e boa para deslizamento do mouse. Pouco uso, sem desgaste significativo.',
+      'Monitor Husky Gaming 24G30E, tela curva, 1920x1080, 180Hz. Em pleno funcionamento, imagem nítida e sem pixels mortos aparentes. Boa opção para setup de trabalho ou jogos.',
     price: 0,
     category: 'eletronicos',
     condition: 'bom',
     media: [
-      { type: 'image', src: itemImage('mousepad-1.webp'), alt: 'Mousepad preto estendido com detalhe vermelho' },
-      { type: 'image', src: itemImage('mousepad-2.webp'), alt: 'Close do detalhe gravado a laser no mousepad' },
+      { type: 'image', src: itemImage('monitor-husky-3.webp'), alt: 'Monitor Husky Gaming curvo ligado exibindo papel de parede, visto de frente' },
+      { type: 'image', src: itemImage('monitor-husky.webp'), alt: 'Parte traseira do monitor Husky Gaming com fita de LED amarela' },
+      { type: 'image', src: itemImage('monitor-husky-2.webp'), alt: 'Menu de configurações de exibição mostrando o monitor modelo 24G30E' },
     ],
   },
   {
@@ -171,35 +171,22 @@ export const ITEMS: Item[] = [
   },
   {
     id: 20,
-    title: 'Luz de vídeo LED portátil (clip)',
-    summary: 'Mini painel de luz LED com clipe, ótima para videochamadas. Pouco uso.',
+    title: 'Mini luminária RGB de bolso (RGB Pocket Camp 2)',
+    summary: 'Luz de ambiente portátil com clipe e várias cores. Compacta.',
     description:
-      'Luz de vídeo LED portátil, com clipe de fixação e difusor. Ideal para videochamadas, selfies e pequenas produções de vídeo. Pouco uso, funcionando normalmente.',
+      'Mini luminária RGB de bolso (RGB Pocket Camp 2), recarregável via USB-C, com clipe de fixação e várias cores/efeitos de iluminação. Tamanho compacto, ótima para videochamadas, cenário de fotos ou ambientação.',
     price: 0,
     category: 'eletronicos',
     condition: 'bom',
     media: [
-      { type: 'image', src: itemImage('luz-led-1.webp'), alt: 'Mini luz de LED com difusor montada em suporte' },
-      { type: 'image', src: itemImage('luz-led-2.webp'), alt: 'Mini luz de LED branca presa por clipe' },
-      { type: 'image', src: itemImage('luz-led-3.webp'), alt: 'Mini luz de LED acesa em vermelho sobre tecido' },
+      { type: 'image', src: itemImage('pocket-lamp-1.webp'), alt: 'Mini luminária RGB de bolso desligada, com painel de controle visível' },
+      { type: 'image', src: itemImage('pocket-lamp-2.webp'), alt: 'Mini luminária RGB de bolso acesa em branco no escuro' },
+      { type: 'image', src: itemImage('pocket-lamp-3.webp'), alt: 'Mini luminária RGB de bolso desligada, vista pelo lado do difusor' },
+      { type: 'image', src: itemImage('pocket-lamp-4.webp'), alt: 'Mini luminária RGB de bolso acesa em vermelho sobre tecido' },
     ],
   },
   {
     id: 21,
-    title: 'Mini luminária RGB de bolso',
-    summary: 'RGB Pocket Lamp, luz de ambiente portátil com várias cores. Compacta.',
-    description:
-      'Mini luminária RGB de bolso (RGB Pocket Lamp), recarregável, com várias cores e efeitos de iluminação. Tamanho compacto, ótima para cenário de fotos ou ambientação.',
-    price: 0,
-    category: 'eletronicos',
-    condition: 'bom',
-    media: [
-      { type: 'image', src: itemImage('pocket-lamp-1.webp'), alt: 'Mini luminária RGB de bolso desligada' },
-      { type: 'image', src: itemImage('pocket-lamp-2.webp'), alt: 'Mini luminária RGB de bolso acesa no escuro' },
-    ],
-  },
-  {
-    id: 22,
     title: 'Mouse Logitech G sem fio',
     summary: 'Mouse gamer sem fio com iluminação RGB. Sensor preciso, bom estado.',
     description:
@@ -214,7 +201,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 23,
+    id: 22,
     title: 'Tripé + mini câmera de ação',
     summary: 'Tripé/monopé extensível acompanhado de mini câmera de ação. Funcionando.',
     description:
@@ -231,7 +218,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 24,
+    id: 23,
     title: 'Lote de bonecos Star Wars',
     summary: 'Mini figuras colecionáveis: stormtroopers, Chewbacca e chaveiros. Bom estado.',
     description:
@@ -248,7 +235,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 25,
+    id: 24,
     title: 'Pelúcia Grogu (Baby Yoda)',
     summary: 'Pelúcia macia do Grogu, personagem de The Mandalorian. Bom estado.',
     description:
@@ -263,7 +250,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 26,
+    id: 25,
     title: 'Boneco Doutor Estranho',
     summary: 'Mini figura colecionável da Marvel, sentado em pose de feitiço. Bom estado.',
     description:
@@ -278,7 +265,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 27,
+    id: 26,
     title: 'Livro: Código Limpo',
     summary: 'Robert C. Martin, edição revisada. Usado, mas em estado de novo.',
     description:
@@ -293,7 +280,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 28,
+    id: 27,
     title: 'Livro: O Codificador Limpo',
     summary: 'Robert C. Martin (The Clean Coder). Ainda lacrado na embalagem original.',
     description:
@@ -307,7 +294,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 29,
+    id: 28,
     title: 'Livro: Microsserviços Prontos para Produção',
     summary: 'Susan J. Fowler, editora Novatec. Ainda lacrado na embalagem original.',
     description:
@@ -321,7 +308,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 30,
+    id: 29,
     title: 'Livro: O Investidor Inteligente',
     summary: 'Benjamin Graham, ainda lacrado na embalagem original. Novo.',
     description:
@@ -336,7 +323,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 31,
+    id: 30,
     title: 'Lote de miniaturas Nintendo',
     summary: 'Figuras de Mario, Luigi, Donkey Kong e amigos. Bom estado.',
     description:
@@ -350,7 +337,7 @@ export const ITEMS: Item[] = [
     ],
   },
   {
-    id: 32,
+    id: 31,
     title: 'Perfume Essencial Único (O Boticário)',
     summary: 'Fragrância amadeirada, pouco usado, acompanha caixa original.',
     description:
